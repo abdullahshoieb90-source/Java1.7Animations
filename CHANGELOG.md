@@ -1,13 +1,3 @@
-### v2.6.1
-
-- Fixed the Armor HUD icons not rendering on some Bedrock builds (reported on Android):
-    - Player scripts now keep updating while the player is drawn off-screen in the HUD (`should_update_effects_offscreen`)
-    - The HUD render gate no longer depends on `q.is_on_screen`, which can be false inside `live_player_renderer`
-    - HUD quads are no longer hidden by `part_visibility` querying `q.is_on_screen`
-    - The HUD material now enables `USE_OVERLAY`, and the icon controllers enable `filter_lighting`
-    - Texture/array references in the HUD render controllers were normalized to lowercase
-    - The HUD panel is inserted at the front of the HUD root and drawn on a higher layer
-
 ### v2.6.0
 
 - Added an always-on **Armor HUD** inspired by XeroxClient's (original implementation — no XeroxClient files are copied): the vanilla armor-points bar is replaced by four equipped-armor item icons above the hotbar

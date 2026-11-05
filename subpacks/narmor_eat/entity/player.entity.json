@@ -94,7 +94,6 @@
           "variable.short_arm_offset_right": "public"
         },
         "scale": "0.9375",
-        "should_update_effects_offscreen": "1.0",
         "initialize": [
           "v.short_arm_offset_left = 0.0;",
           "v.short_arm_offset_right = 0.0;",
@@ -169,7 +168,7 @@
           "v.chest_layer_visible = 1.0;",
           "v.leg_layer_visible = 1.0;",
           "v.boot_layer_visible = 1.0;",
-          "v.j17_render_in_hud = q.is_in_ui && q.is_alive;"
+          "v.j17_render_in_hud = q.is_in_ui && q.is_on_screen && q.is_alive;"
         ],
         "animate": [
           "root",
