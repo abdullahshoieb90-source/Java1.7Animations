@@ -1,2 +1,5 @@
 .vscode
 *.py
+!tools/*.py
+artifacts/
+__pycache__/
