@@ -6,10 +6,15 @@ inside a `.mcpack`.
 ```bash
 python3 tools/pack_check.py           # validate the pack
 python3 tools/pack_check.py --verbose # also list vanilla ids that are referenced
-python3 tools/test_pack_check.py      # self-tests for the validator
+python3 -m unittest discover -s tools # self-tests for the validator and the builder
 python3 tools/build_mcpack.py         # build artifacts/Java1.7Animations_v<version>.mcpack
 python3 tools/build_mcpack.py --split # one merged archive per subpack
 ```
+
+GitHub Actions runs the same commands: CI validates and builds on every push
+and pull request (`.github/workflows/ci.yml`), and pushing a `v<version>` tag
+that matches `manifest.json` publishes a release with the `.mcpack` attached
+(`.github/workflows/release.yml`).
 
 ## `pack_check.py`
 
@@ -52,7 +57,12 @@ are built directly:
   base pack and `subpacks` emptied in the manifest — handy when a platform or a
   test device picks the wrong subpack, or when you want a fixed configuration;
 * validation runs first and aborts the build on failure (`--skip-check` to
-  bypass, `--strict` to also fail on warnings).
+  bypass, `--strict` to also fail on warnings);
+* `--out` names a single archive and is rejected with `--split`, where each
+  subpack needs its own filename;
+* repo-only files never ship: `tools/`, docs, `.github/`, and the high-res
+  store-listing icon `pack_icon_1024x1024.png` (the game only reads
+  `pack_icon.png`, and dropping the 1024px copy cuts the archive by ~85%).
 
 Output is deterministic: entries are sorted and zip timestamps are pinned, so
 rebuilding an unchanged pack produces byte-identical archives. Files land in

@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-build:
+    name: Validate & build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run tool self-tests
+        run: python3 -m unittest discover -s tools -p "test_*.py" -v
+
+      - name: Validate pack (strict)
+        run: python3 tools/pack_check.py --strict
+
+      - name: Build .mcpack
+        run: python3 tools/build_mcpack.py --skip-check
+
+      - name: Verify the build is reproducible
+        run: |
+          sha256sum artifacts/*.mcpack > /tmp/first-build.sha256
+          python3 tools/build_mcpack.py --skip-check
+          sha256sum -c /tmp/first-build.sha256
+
+      - name: Upload .mcpack artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Java1.7Animations-mcpack
+          path: artifacts/*.mcpack
+          if-no-files-found: error

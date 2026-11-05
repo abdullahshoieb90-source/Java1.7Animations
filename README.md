@@ -1,4 +1,8 @@
 # Java1.7Animations
+
+[![CI](https://github.com/abdullahshoieb90-source/Java1.7Animations/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahshoieb90-source/Java1.7Animations/actions/workflows/ci.yml)
+[الشرح بالعربية](README.ar.md)
+
 This resource pack attempts to faithfully port over many player animations from Minecraft Java Edition v1.7 to Minecraft Bedrock Edition. Contributions are welcome in the form of pull requests! Please submit a detailed issue if you have a bug report.
 
 ### Working on the pack:
@@ -10,6 +14,16 @@ python3 tools/build_mcpack.py    # build artifacts/Java1.7Animations_v<version>.
 ```
 
 Run the validator before opening a pull request — it catches the usual breakage (unbalanced comments, an id declared twice in the same layer, a subpack folder that is not declared in the manifest, a controller animating an alias no entity defines).
+
+### CI & releases:
+- **CI** (`.github/workflows/ci.yml`) runs the validator self-tests, validates the pack with `--strict`, builds the `.mcpack`, verifies the build is reproducible (byte-identical rebuild), and uploads the pack as a downloadable artifact on every push and pull request.
+- **Releases** (`.github/workflows/release.yml`) publish a GitHub release with the `.mcpack`, SHA256 checksums and the matching CHANGELOG section when a version tag matching `manifest.json` is pushed:
+
+```bash
+git tag v2.5.2 && git push origin v2.5.2
+```
+
+The release job fails with a clear message if the tag does not match the manifest version (bump the manifest first).
 
 ### About Licensing:
 This repository only exists for educational purposes, to aggregate bug reports, and solicit meaningful and quality contributions. If I could distribute an encrypted version of this pack on my own, I would, since theft is rampant in the MCBE mod and pack community. But that isn't possible without a lot of work. Hence, it doesn't seem harmful to "open source" this project. See [LICENSE](LICENSE) for exact terms of use.

@@ -46,7 +46,9 @@ EXCLUDE_DIRS = {
     "build",
     "__pycache__",
 }
-EXCLUDE_FILES = {".gitignore", "README.md", "CHANGELOG.md"}
+# pack_icon_1024x1024.png is store-listing art; the game only reads pack_icon.png,
+# so keep the high-res copy in the repo but out of the installable archive.
+EXCLUDE_FILES = {".gitignore", "README.md", "CHANGELOG.md", "pack_icon_1024x1024.png"}
 EXCLUDE_SUFFIXES = (".py", ".pyc", ".md", ".mcpack", ".zip")
 
 
@@ -119,6 +121,9 @@ def main(argv=None):
     parser.add_argument("--skip-check", action="store_true", help="do not run tools/pack_check.py first")
     parser.add_argument("--strict", action="store_true", help="fail on validator warnings too")
     args = parser.parse_args(argv)
+
+    if args.split and args.out:
+        parser.error("--out names a single archive; with --split each subpack needs its own file, so omit --out")
 
     root = os.path.abspath(args.root)
 
