@@ -11,6 +11,7 @@
 
     "j17_armor_hud:armor": {
       "+defines": [
+        "USE_OVERLAY",
         "USE_COLOR_MASK"
       ]
     }

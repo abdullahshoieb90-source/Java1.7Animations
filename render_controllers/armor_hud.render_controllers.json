@@ -9,24 +9,24 @@
       "arrays": {
         "textures": {
           "array.j17_helmets": [
-            "Texture.j17_hud_empty_helmet",
-            "Texture.j17_hud_leather_helmet",
-            "Texture.j17_hud_chainmail_helmet",
-            "Texture.j17_hud_iron_helmet",
-            "Texture.j17_hud_diamond_helmet",
-            "Texture.j17_hud_gold_helmet",
-            "Texture.j17_hud_gold_helmet",
-            "Texture.j17_hud_turtle_helmet",
-            "Texture.j17_hud_netherite_helmet",
-            "Texture.j17_hud_copper_helmet",
-            "Texture.j17_hud_pumpkin"
+            "texture.j17_hud_empty_helmet",
+            "texture.j17_hud_leather_helmet",
+            "texture.j17_hud_chainmail_helmet",
+            "texture.j17_hud_iron_helmet",
+            "texture.j17_hud_diamond_helmet",
+            "texture.j17_hud_gold_helmet",
+            "texture.j17_hud_gold_helmet",
+            "texture.j17_hud_turtle_helmet",
+            "texture.j17_hud_netherite_helmet",
+            "texture.j17_hud_copper_helmet",
+            "texture.j17_hud_pumpkin"
           ]
         }
       },
-      "geometry": "Geometry.j17_hud_helmet",
-      "materials": [ { "*": "Material.j17_armor_hud" } ],
+      "geometry": "geometry.j17_hud_helmet",
+      "materials": [ { "*": "material.j17_armor_hud" } ],
       "textures": [
-        "Array.j17_helmets[q.is_item_name_any('slot.armor.head', 0, 'minecraft:carved_pumpkin') ? 10 : (q.armor_texture_slot(0) + 1)]"
+        "array.j17_helmets[q.is_item_name_any('slot.armor.head', 0, 'minecraft:carved_pumpkin') ? 10 : (q.armor_texture_slot(0) + 1)]"
       ],
       "color": {
         "r": "q.armor_color_slot(0, 0)",
@@ -35,28 +35,29 @@
         "a": "q.armor_color_slot(0, 3)"
       },
       "ignore_lighting": true,
-      "part_visibility": [ { "*": "q.is_on_screen" } ]
+      "filter_lighting": true,
+      "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_chestplate": {
       "arrays": {
         "textures": {
           "array.j17_chestplates": [
-            "Texture.j17_hud_empty_chestplate",
-            "Texture.j17_hud_leather_chestplate",
-            "Texture.j17_hud_chainmail_chestplate",
-            "Texture.j17_hud_iron_chestplate",
-            "Texture.j17_hud_diamond_chestplate",
-            "Texture.j17_hud_gold_chestplate",
-            "Texture.j17_hud_elytra",
-            "Texture.j17_hud_elytra",
-            "Texture.j17_hud_netherite_chestplate",
-            "Texture.j17_hud_copper_chestplate"
+            "texture.j17_hud_empty_chestplate",
+            "texture.j17_hud_leather_chestplate",
+            "texture.j17_hud_chainmail_chestplate",
+            "texture.j17_hud_iron_chestplate",
+            "texture.j17_hud_diamond_chestplate",
+            "texture.j17_hud_gold_chestplate",
+            "texture.j17_hud_elytra",
+            "texture.j17_hud_elytra",
+            "texture.j17_hud_netherite_chestplate",
+            "texture.j17_hud_copper_chestplate"
           ]
         }
       },
-      "geometry": "Geometry.j17_hud_chestplate",
-      "materials": [ { "*": "Material.j17_armor_hud" } ],
-      "textures": [ "Array.j17_chestplates[q.armor_texture_slot(1) + 1]" ],
+      "geometry": "geometry.j17_hud_chestplate",
+      "materials": [ { "*": "material.j17_armor_hud" } ],
+      "textures": [ "array.j17_chestplates[q.armor_texture_slot(1) + 1]" ],
       "color": {
         "r": "q.armor_color_slot(1, 0)",
         "g": "q.armor_color_slot(1, 1)",
@@ -64,28 +65,29 @@
         "a": "q.armor_color_slot(1, 3)"
       },
       "ignore_lighting": true,
-      "part_visibility": [ { "*": "q.is_on_screen" } ]
+      "filter_lighting": true,
+      "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_leggings": {
       "arrays": {
         "textures": {
           "array.j17_leggings": [
-            "Texture.j17_hud_empty_leggings",
-            "Texture.j17_hud_leather_leggings",
-            "Texture.j17_hud_chainmail_leggings",
-            "Texture.j17_hud_iron_leggings",
-            "Texture.j17_hud_diamond_leggings",
-            "Texture.j17_hud_gold_leggings",
-            "Texture.j17_hud_gold_leggings",
-            "Texture.j17_hud_gold_leggings",
-            "Texture.j17_hud_netherite_leggings",
-            "Texture.j17_hud_copper_leggings"
+            "texture.j17_hud_empty_leggings",
+            "texture.j17_hud_leather_leggings",
+            "texture.j17_hud_chainmail_leggings",
+            "texture.j17_hud_iron_leggings",
+            "texture.j17_hud_diamond_leggings",
+            "texture.j17_hud_gold_leggings",
+            "texture.j17_hud_gold_leggings",
+            "texture.j17_hud_gold_leggings",
+            "texture.j17_hud_netherite_leggings",
+            "texture.j17_hud_copper_leggings"
           ]
         }
       },
-      "geometry": "Geometry.j17_hud_leggings",
-      "materials": [ { "*": "Material.j17_armor_hud" } ],
-      "textures": [ "Array.j17_leggings[q.armor_texture_slot(2) + 1]" ],
+      "geometry": "geometry.j17_hud_leggings",
+      "materials": [ { "*": "material.j17_armor_hud" } ],
+      "textures": [ "array.j17_leggings[q.armor_texture_slot(2) + 1]" ],
       "color": {
         "r": "q.armor_color_slot(2, 0)",
         "g": "q.armor_color_slot(2, 1)",
@@ -93,28 +95,29 @@
         "a": "q.armor_color_slot(2, 3)"
       },
       "ignore_lighting": true,
-      "part_visibility": [ { "*": "q.is_on_screen" } ]
+      "filter_lighting": true,
+      "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_boots": {
       "arrays": {
         "textures": {
           "array.j17_boots": [
-            "Texture.j17_hud_empty_boots",
-            "Texture.j17_hud_leather_boots",
-            "Texture.j17_hud_chainmail_boots",
-            "Texture.j17_hud_iron_boots",
-            "Texture.j17_hud_diamond_boots",
-            "Texture.j17_hud_gold_boots",
-            "Texture.j17_hud_gold_boots",
-            "Texture.j17_hud_gold_boots",
-            "Texture.j17_hud_netherite_boots",
-            "Texture.j17_hud_copper_boots"
+            "texture.j17_hud_empty_boots",
+            "texture.j17_hud_leather_boots",
+            "texture.j17_hud_chainmail_boots",
+            "texture.j17_hud_iron_boots",
+            "texture.j17_hud_diamond_boots",
+            "texture.j17_hud_gold_boots",
+            "texture.j17_hud_gold_boots",
+            "texture.j17_hud_gold_boots",
+            "texture.j17_hud_netherite_boots",
+            "texture.j17_hud_copper_boots"
           ]
         }
       },
-      "geometry": "Geometry.j17_hud_boots",
-      "materials": [ { "*": "Material.j17_armor_hud" } ],
-      "textures": [ "Array.j17_boots[q.armor_texture_slot(3) + 1]" ],
+      "geometry": "geometry.j17_hud_boots",
+      "materials": [ { "*": "material.j17_armor_hud" } ],
+      "textures": [ "array.j17_boots[q.armor_texture_slot(3) + 1]" ],
       "color": {
         "r": "q.armor_color_slot(3, 0)",
         "g": "q.armor_color_slot(3, 1)",
@@ -122,7 +125,8 @@
         "a": "q.armor_color_slot(3, 3)"
       },
       "ignore_lighting": true,
-      "part_visibility": [ { "*": "q.is_on_screen" } ]
+      "filter_lighting": true,
+      "part_visibility": [ { "*": true } ]
     }
   }
 }

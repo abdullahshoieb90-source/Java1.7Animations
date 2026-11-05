@@ -1,5 +1,7 @@
 // This file was modified by ambient (ambiennt on discord). Do not use or redistribute this file or its contents without explicit permission from the author.
 {
+  "namespace": "hud",
+
   "vignette_renderer": {
     "ignored": true
   },
@@ -49,7 +51,7 @@
     "modifications": [
       {
         "array_name": "controls",
-        "operation": "insert_back",
+        "operation": "insert_front",
         "value": [
           { "j17_armor_hud@j17_armor_hud.armor_hud": {} }
         ]
