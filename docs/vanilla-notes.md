@@ -73,3 +73,94 @@ python3 tools/vanilla_index.py /path/to/behavior_packs --out docs/vanilla_refere
 uuid/version/min_engine_version, every entity identifier, every component key,
 and the encoding of each archive. It is committed so the pack's assumptions can
 be checked without shipping the game dump itself (which is not redistributable).
+
+---
+
+# Part 2 — the resource pack dump (`resource_packs/`)
+
+Same container format, different payloads: 71 pack folders, 391 `__brarchive`
+files, with `entity`, `animations`, `animation_controllers`,
+`render_controllers`, `models`, `materials`, `particles`, `ui`, `textures`,
+`font` and `sounds` archives. The reader needed no changes to handle them.
+
+## 6. The vanilla base pack holds exactly one `minecraft:player` client entity
+
+`vanilla part 1 …/__brarchive/entity.brarchive` has 147 entries. Exactly one of
+them is the player client entity, and it declares:
+
+* **52 animation aliases**, 10 `pre_animation` statements, `scripts.animate: ["root"]`
+* geometry slots: only `default` and `cape`
+* materials: `default`, `cape`, `animated`
+* 3 render controllers: `controller.render.player.first_person`, `.third_person`, `.map`
+
+The 16.60 layer repeats a tiny subset (`minecraft:cat`, `minecraft:sheep`), which
+confirms the patch-layer model from Part 1 also applies here.
+
+## 7. Versioned layers only patch the player entity
+
+Only 13 of the 71 folders carry a player client entity:
+
+| pack | aliases | geometry slots | pre_animation |
+|---|---|---|---|
+| 1.16.0 | 50 | cape, default | 10 |
+| 1.17.0 | 50 | cape, default | 10 |
+| 1.19.10 | 52 | cape, default | 10 |
+| 1.20.10 | 56 | cape, default | 10 |
+| 1.21.50 | 57 | cape, default | 10 |
+| 1.21.90 | 58 | cape, default | 11 |
+| **1.21.130** | **68** | cape, default | **64** |
+
+Two consequences:
+
+1. **A pack must declare every alias it still relies on itself.** Bedrock does
+   not merge the entity file: `subpacks/*/entity/player.entity.json` fully
+   replaces the vanilla description. Our pack is safe here — all 52 vanilla base
+   aliases are still declared in every subpack — but the 1.21.130 additions are
+   not, because they bind to animations we do not define.
+2. **The armour overlay is still viable in 1.21.130.** Vanilla declares only
+   `default` and `cape` geometry slots; every `player_armor_*` slot is ours, and
+   `render_controllers` is still an overridable array. That is what the whole
+   hurt-overlay feature is built on.
+
+## 8. New first-class features as of 1.21.130
+
+The 1.21.130 player entity grew from 58 to 68 aliases and from 11 to 64
+`pre_animation` statements, and it changed spectator handling:
+
+* render controllers are now spectator-aware:
+  `controller.render.player.first_person_spectator` (ours matches this already)
+  plus `|| query.is_spectator` guards;
+* materials gained `spectator: player_spectator` (ours matches);
+* new aliases bind to new vanilla animations — and this pack does not define
+  them, so on 1.21.130+ the following vanilla features are effectively missing
+  from our player:
+
+| alias | binds to | ours defines it? |
+|---|---|---|
+| `crawling.no_right_arm` | `animation.player.crawl.no_right_arm` | no |
+| `swimming.no_right_arm` | `animation.player.swim.no_right_arm` | no |
+| `riding.root` | `animation.player.riding.root` | no |
+| `holding_heavy_core` | `animation.player.holding_heavy_core` | no |
+| `first_person_melee_spear_*` (4 aliases) | `animation.player.first_person.melee_spear_*` + `controller.animation.player.first_person_melee_spear` | no |
+| `third_person_melee_spear_*` (4 aliases) | `animation.player.melee_spear_attack`, `animation.humanoid.melee_spear_*` | no |
+
+The bodies are short and readable in the dump, which makes them cheap to port.
+Two examples, verbatim:
+
+```json
+"animation.player.riding.root":    { "loop": true, "bones": { "root": { "position": [0.0, "variable.riding_y_offset ?? 0.0", 0.0] } } }
+"animation.player.holding_heavy_core": { "loop": true, "bones": { "rightItem": { "scale": 0.7, "position": [-1.0, 0.0, -2.0] } } }
+```
+
+## 9. Regenerating the resource index
+
+```bash
+python3 tools/vanilla_index.py /path/to/resource_packs --resource \
+    --out docs/vanilla_resource_index.json
+```
+
+`docs/vanilla_resource_index.json` (~105 KiB) keeps, per pack folder: manifest
+metadata, archive encodings, and — for the 13 folders that ship one — the
+`minecraft:player` client entity summary (animation aliases, geometry slots,
+materials, render controllers, `scripts` keys, `animate` list, `pre_animation`
+count).

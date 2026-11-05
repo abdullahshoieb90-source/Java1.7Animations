@@ -6,7 +6,8 @@ ships inside the game) into a compact JSON reference.
 Modern Bedrock stores the vanilla behaviour data in `__brarchive` containers
 instead of loose JSON, so `tools/brarchive.py` is used to read them.
 
-    python3 tools/vanilla_index.py <behavior_packs-dir> --out docs/vanilla_index.json
+    python3 tools/vanilla_index.py <behavior_packs-dir> --out docs/vanilla_reference.json
+    python3 tools/vanilla_index.py <resource_packs-dir> --out docs/vanilla_resource_index.json
 
 The index records, per pack folder (which is what encodes the game version):
 
@@ -14,10 +15,12 @@ The index records, per pack folder (which is what encodes the game version):
   * every entity identifier shipped by that version
   * every entity component / component-group key used by that version
 
-That answers questions the resource pack side cares about, e.g. "did 1.21.50
-still ship `minecraft:player`" or "when did component X appear". The archive
-counter (`json_entries` / `compiled_entries`) also flags entries that are stored
-in the compiled binary form rather than as JSON.
+The same dump layout exists for resource packs (`__brarchive/entity.brarchive`,
+`animations.brarchive`, `render_controllers.brarchive`, `models.brarchive`, ...).
+For those, `--resource` additionally records the *client* entity descriptions of
+`minecraft:player` (animation aliases, geometry slots, materials, render
+controllers and the `scripts` blocks), which is exactly the surface a player
+animation pack has to stay compatible with.
 
 Output is deterministic (sorted keys, no timestamps) so it diffs cleanly.
 """
@@ -79,7 +82,28 @@ def index_entities(archive_path: str):
     }
 
 
-def build_index(root: str):
+def index_player_client_entity(archive_path: str):
+    """Summarise the vanilla `minecraft:player` client entity, if this archive has it."""
+    archive = brarchive.read_archive(archive_path)
+    for document in archive["documents"]:
+        section = (document or {}).get("minecraft:client_entity") or {}
+        description = section.get("description") or {}
+        if description.get("identifier") != "minecraft:player":
+            continue
+        return {
+            "format_version": document.get("format_version"),
+            "animation_aliases": sorted((description.get("animations") or {})),
+            "geometry_slots": sorted((description.get("geometry") or {})),
+            "materials": description.get("materials"),
+            "render_controllers": description.get("render_controllers"),
+            "script_keys": sorted((description.get("scripts") or {})),
+            "animate": (description.get("scripts") or {}).get("animate"),
+            "pre_animation_count": len((description.get("scripts") or {}).get("pre_animation") or []),
+        }
+    return None
+
+
+def build_index(root: str, resource: bool = False):
     packs = {}
     archives_seen = Counter()
     for folder in sorted(os.listdir(root)):
@@ -104,6 +128,10 @@ def build_index(root: str):
                     "encoding": archive["encoding"],
                     "documents": len(archive["documents"]),
                 }
+                if resource and name == "entity.brarchive":
+                    summary = index_player_client_entity(path)
+                    if summary:
+                        entry["player_client_entity"] = summary
                 if name == "entities.brarchive":
                     ids, comps, stats = index_entities(path)
                     entry["entity_identifiers"] = ids
@@ -124,13 +152,18 @@ def main(argv=None):
     parser.add_argument("root", help="path to the behavior_packs directory")
     parser.add_argument("--out", default="-", help="output JSON path, or - for stdout")
     parser.add_argument("--summary", action="store_true", help="print a short human summary")
+    parser.add_argument(
+        "--resource",
+        action="store_true",
+        help="this is a resource_packs dump; also index minecraft:player client entities",
+    )
     args = parser.parse_args(argv)
 
     if not os.path.isdir(args.root):
         print(f"error: {args.root} is not a directory", file=sys.stderr)
         return 1
 
-    index = build_index(args.root)
+    index = build_index(args.root, resource=args.resource)
 
     if args.out == "-":
         print(json.dumps(index, indent=2, sort_keys=True))

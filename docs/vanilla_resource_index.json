@@ -1,0 +1,4362 @@
+{
+  "archive_kinds": {
+    "animation_controllers.brarchive": 32,
+    "animations.brarchive": 37,
+    "atmospherics.brarchive": 2,
+    "attachables.brarchive": 9,
+    "biomes.brarchive": 16,
+    "block_culling.brarchive": 2,
+    "color_grading.brarchive": 2,
+    "ddui.brarchive": 2,
+    "entity.brarchive": 40,
+    "fogs.brarchive": 13,
+    "items.brarchive": 5,
+    "lighting.brarchive": 2,
+    "materials.brarchive": 3,
+    "models.brarchive": 32,
+    "particles.brarchive": 27,
+    "pbr.brarchive": 1,
+    "pieces.brarchive": 1,
+    "render_controllers.brarchive": 30,
+    "shadows.brarchive": 1,
+    "sounds.brarchive": 46,
+    "texts.brarchive": 8,
+    "textures.brarchive": 55,
+    "ui.brarchive": 2,
+    "water.brarchive": 2
+  },
+  "pack_count": 71,
+  "packs": {
+    "beta": {
+      "archives": {
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          13,
+          0
+        ],
+        "name": "resourcePack.betapack",
+        "uuid": "6b22ea2b-bac1-4c07-95a1-bc7bc5818b1c",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "chemistry": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "materials.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "texts.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 31
+        },
+        "textures.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "ui.brarchive": {
+          "documents": 10,
+          "encoding": "json",
+          "entries": 10
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          14,
+          0
+        ],
+        "name": "pack.name",
+        "uuid": "0fba4063-dba1-4281-9b89-ff9390653530",
+        "version": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    "chemistry_1.20.50": {
+      "archives": {
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          50
+        ],
+        "name": "pack.name",
+        "uuid": "0674721c-a0aa-41a1-9ba8-1ed33ea3e7ed",
+        "version": [
+          1,
+          20,
+          50
+        ]
+      }
+    },
+    "chemistry_1.20.60": {
+      "archives": {
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          60
+        ],
+        "name": "pack.name",
+        "uuid": "e977cd13-0a11-4618-96fb-03dfe9c43608",
+        "version": [
+          1,
+          20,
+          60
+        ]
+      }
+    },
+    "chemistry_1.21.0": {
+      "archives": {},
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          0
+        ],
+        "name": "pack.name",
+        "uuid": "85d5603d-2824-4b21-8044-34f441f4fce1",
+        "version": [
+          1,
+          21,
+          0
+        ]
+      }
+    },
+    "chemistry_1.21.10": {
+      "archives": {},
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          10
+        ],
+        "name": "pack.name",
+        "uuid": "d19adffe-a2e1-4b02-8436-ca4583368c89",
+        "version": [
+          1,
+          21,
+          10
+        ]
+      }
+    },
+    "chemistry_1.21.20": {
+      "archives": {},
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          20
+        ],
+        "name": "pack.name",
+        "uuid": "a4df0cb3-17be-4163-88d7-fcf7002b935d",
+        "version": [
+          1,
+          21,
+          20
+        ]
+      }
+    },
+    "chemistry_1.21.30": {
+      "archives": {
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          30
+        ],
+        "name": "pack.name",
+        "uuid": "b41c2785-c512-4a49-af56-3a87afd47c57",
+        "version": [
+          1,
+          21,
+          30
+        ]
+      }
+    },
+    "chemistry_1.26.40": {
+      "archives": {},
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          40
+        ],
+        "name": "pack.name",
+        "uuid": "d34cfa4b-2ad1-453d-a0db-668b429a3ea0",
+        "version": [
+          1,
+          26,
+          40
+        ]
+      }
+    },
+    "experimental_poi": {
+      "archives": {
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          130
+        ],
+        "name": "resourcePack.vanilla.poi.name",
+        "uuid": "8A5C56FB-3850-456A-85D5-812F8DE9D320",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "experimental_y_2026_drop_4": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "atmospherics.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "block_culling.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "color_grading.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "lighting.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "materials.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 2
+        },
+        "render_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          40
+        ],
+        "name": "Drop 4 of 2026",
+        "uuid": "f3d96f1e-fec7-4c4c-8c8a-f63d7ab39218",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "oreui": {
+      "archives": {
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          13,
+          0
+        ],
+        "name": "Minecraft UI Resource Pack",
+        "uuid": "fdcdb085-9f06-464f-bf0e-25c0b37ff4a5",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "persona": {
+      "archives": {
+        "pieces.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          14,
+          0
+        ],
+        "name": "Persona Built-in Pack",
+        "uuid": "2099de18-429a-465a-a49b-fc4710a17bb3",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "platform_google": {
+      "archives": {
+        "texts.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 29
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          14,
+          0
+        ],
+        "name": "resourcePack.platform_google.name",
+        "uuid": "47e901c5-fbf4-4c31-8a4f-71e7dbd5b34c",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "script_ui": {
+      "archives": {
+        "ddui.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          14,
+          0
+        ],
+        "name": "DDUI Built-in Pack",
+        "uuid": "89ba4088-8cb4-41c2-82de-8d203daf4fcd",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    "vanilla_1.14": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "items.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 3
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          14,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          14,
+          0
+        ]
+      }
+    },
+    "vanilla_1.15": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 37,
+          "encoding": "json",
+          "entries": 37
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 3
+        },
+        "sounds.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          15,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          15,
+          0
+        ]
+      }
+    },
+    "vanilla_1.16": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "biomes.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "entity.brarchive": {
+          "documents": 9,
+          "encoding": "json",
+          "entries": 9
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 7
+        },
+        "render_controllers.brarchive": {
+          "documents": 7,
+          "encoding": "json",
+          "entries": 7
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          16,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          16,
+          0
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "fishing_rod",
+          "holding",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.16.100": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "entity.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "fogs.brarchive": {
+          "documents": 69,
+          "encoding": "json",
+          "entries": 69
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          16,
+          100
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          16,
+          100
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "fishing_rod",
+          "holding",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.16.200": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          16,
+          200
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          16,
+          200
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "fishing_rod",
+          "holding",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.16.210": {
+      "archives": {
+        "biomes.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          16,
+          210
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          16,
+          210
+        ]
+      }
+    },
+    "vanilla_1.16.220": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          16,
+          220
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          16,
+          220
+        ]
+      }
+    },
+    "vanilla_1.17.0": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 6,
+          "encoding": "json",
+          "entries": 6
+        },
+        "attachables.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "items.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 11
+        },
+        "render_controllers.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          17,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          17,
+          0
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.17.10": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          17,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          17,
+          10
+        ]
+      }
+    },
+    "vanilla_1.17.20": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          17,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          17,
+          20
+        ]
+      }
+    },
+    "vanilla_1.17.30": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          17,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          17,
+          30
+        ]
+      }
+    },
+    "vanilla_1.17.40": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          17,
+          40
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          17,
+          40
+        ]
+      }
+    },
+    "vanilla_1.18.0": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 8,
+          "encoding": "json",
+          "entries": 8
+        },
+        "fogs.brarchive": {
+          "documents": 52,
+          "encoding": "json",
+          "entries": 52
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          18,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          18,
+          0
+        ]
+      }
+    },
+    "vanilla_1.18.10": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "animations.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "entity.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          18,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          18,
+          10
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.18.20": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          18,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          18,
+          20
+        ]
+      }
+    },
+    "vanilla_1.18.30": {
+      "archives": {
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          18,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          18,
+          30
+        ]
+      }
+    },
+    "vanilla_1.19.0": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "biomes.brarchive": {
+          "documents": 21,
+          "encoding": "json",
+          "entries": 21
+        },
+        "entity.brarchive": {
+          "documents": 6,
+          "encoding": "json",
+          "entries": 6
+        },
+        "fogs.brarchive": {
+          "documents": 70,
+          "encoding": "json",
+          "entries": 70
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 8
+        },
+        "render_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          0
+        ]
+      }
+    },
+    "vanilla_1.19.10": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "entity.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          10
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person": "variable.is_first_person"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.19.20": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          20
+        ]
+      }
+    },
+    "vanilla_1.19.30": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          30
+        ]
+      }
+    },
+    "vanilla_1.19.40": {
+      "archives": {},
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          40
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          40
+        ]
+      }
+    },
+    "vanilla_1.19.50": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "render_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          50
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          50
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.19.60": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "entity.brarchive": {
+          "documents": 10,
+          "encoding": "json",
+          "entries": 10
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 2
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          60
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          60
+        ]
+      }
+    },
+    "vanilla_1.19.70": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "items.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          70
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          70
+        ]
+      }
+    },
+    "vanilla_1.19.80": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "models.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          19,
+          80
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          19,
+          80
+        ]
+      }
+    },
+    "vanilla_1.20.0": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "attachables.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 6,
+          "encoding": "json",
+          "entries": 6
+        },
+        "entity.brarchive": {
+          "documents": 7,
+          "encoding": "json",
+          "entries": 7
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "items.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 6,
+          "encoding": "json",
+          "entries": 6
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          0
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.20.10": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          10
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crawling",
+          "crawling.legs",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.20.20": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          20
+        ]
+      }
+    },
+    "vanilla_1.20.30": {
+      "archives": {
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          30
+        ]
+      }
+    },
+    "vanilla_1.20.40": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          40
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          40
+        ]
+      }
+    },
+    "vanilla_1.20.50": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          50
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          50
+        ]
+      }
+    },
+    "vanilla_1.20.60": {
+      "archives": {
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          60
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          60
+        ]
+      }
+    },
+    "vanilla_1.20.70": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          70
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          70
+        ]
+      }
+    },
+    "vanilla_1.20.80": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "attachables.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "render_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          20,
+          80
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          20,
+          80
+        ]
+      }
+    },
+    "vanilla_1.21.0": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "attachables.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 8,
+          "encoding": "json",
+          "entries": 8
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 25
+        },
+        "render_controllers.brarchive": {
+          "documents": 8,
+          "encoding": "json",
+          "entries": 8
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          0
+        ]
+      }
+    },
+    "vanilla_1.21.10": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "attachables.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 3
+        },
+        "render_controllers.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          10
+        ]
+      }
+    },
+    "vanilla_1.21.100": {
+      "archives": {
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "fogs.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 4
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          100
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          100
+        ]
+      }
+    },
+    "vanilla_1.21.110": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "attachables.brarchive": {
+          "documents": 8,
+          "encoding": "json",
+          "entries": 8
+        },
+        "biomes.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 17
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          110
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          110
+        ]
+      }
+    },
+    "vanilla_1.21.120": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 87,
+          "encoding": "json",
+          "entries": 87
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "water.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          120
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          120
+        ]
+      }
+    },
+    "vanilla_1.21.130": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "attachables.brarchive": {
+          "documents": 7,
+          "encoding": "json",
+          "entries": 7
+        },
+        "ddui.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "entity.brarchive": {
+          "documents": 13,
+          "encoding": "json",
+          "entries": 13
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          130
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          130
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crawling",
+          "crawling.legs",
+          "crawling.no_right_arm",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_melee_spear_attack",
+          "first_person_melee_spear_controller",
+          "first_person_melee_spear_hold",
+          "first_person_melee_spear_use",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_heavy_core",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "riding.root",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "swimming.no_right_arm",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "third_person_melee_spear_attack",
+          "third_person_melee_spear_controller",
+          "third_person_melee_spear_hold",
+          "third_person_melee_spear_use",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.26.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 64,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale",
+          "should_update_effects_offscreen",
+          "variables"
+        ]
+      }
+    },
+    "vanilla_1.21.20": {
+      "archives": {
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          20
+        ]
+      }
+    },
+    "vanilla_1.21.30": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "items.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "render_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          30
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crawling",
+          "crawling.legs",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.21.40": {
+      "archives": {
+        "biomes.brarchive": {
+          "documents": 86,
+          "encoding": "json",
+          "entries": 86
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "unknown",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          40
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          40
+        ]
+      }
+    },
+    "vanilla_1.21.50": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "biomes.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 7,
+          "encoding": "json",
+          "entries": 7
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 7
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          50
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          50
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crawling",
+          "crawling.legs",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_heavy_core",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 10,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.21.60": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          60
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          60
+        ]
+      }
+    },
+    "vanilla_1.21.70": {
+      "archives": {
+        "biomes.brarchive": {
+          "documents": 6,
+          "encoding": "json",
+          "entries": 6
+        },
+        "entity.brarchive": {
+          "documents": 83,
+          "encoding": "json",
+          "entries": 83
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 2
+        },
+        "render_controllers.brarchive": {
+          "documents": 5,
+          "encoding": "json",
+          "entries": 5
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          70
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          70
+        ]
+      }
+    },
+    "vanilla_1.21.80": {
+      "archives": {
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          80
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          80
+        ]
+      }
+    },
+    "vanilla_1.21.90": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "animations.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "atmospherics.brarchive": {
+          "documents": 17,
+          "encoding": "json",
+          "entries": 17
+        },
+        "attachables.brarchive": {
+          "documents": 16,
+          "encoding": "json",
+          "entries": 16
+        },
+        "biomes.brarchive": {
+          "documents": 87,
+          "encoding": "json",
+          "entries": 87
+        },
+        "color_grading.brarchive": {
+          "documents": 14,
+          "encoding": "json",
+          "entries": 14
+        },
+        "entity.brarchive": {
+          "documents": 17,
+          "encoding": "json",
+          "entries": 17
+        },
+        "fogs.brarchive": {
+          "documents": 48,
+          "encoding": "json",
+          "entries": 48
+        },
+        "lighting.brarchive": {
+          "documents": 15,
+          "encoding": "json",
+          "entries": 15
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 2
+        },
+        "pbr.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "render_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "shadows.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "water.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          21,
+          90
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          21,
+          90
+        ]
+      },
+      "player_client_entity": {
+        "animate": [
+          "root"
+        ],
+        "animation_aliases": [
+          "attack.positions",
+          "attack.rotations",
+          "base_controller",
+          "blink",
+          "bob",
+          "bow_and_arrow",
+          "brandish_spear",
+          "brushing",
+          "cape",
+          "charging",
+          "crawling",
+          "crawling.legs",
+          "crossbow_controller",
+          "crossbow_hold",
+          "damage_nearby_mobs",
+          "first_person_attack_controller",
+          "first_person_attack_rotation",
+          "first_person_base_pose",
+          "first_person_crossbow_equipped",
+          "first_person_empty_hand",
+          "first_person_map_controller",
+          "first_person_map_hold",
+          "first_person_map_hold_attack",
+          "first_person_map_hold_main_hand",
+          "first_person_map_hold_off_hand",
+          "first_person_shield_block",
+          "first_person_swap_item",
+          "first_person_vr_attack_rotation",
+          "first_person_walk",
+          "holding",
+          "holding_brush",
+          "holding_heavy_core",
+          "holding_spyglass",
+          "hudplayer",
+          "humanoid_base_pose",
+          "look_at_target",
+          "look_at_target_default",
+          "look_at_target_gliding",
+          "look_at_target_inverted",
+          "look_at_target_swimming",
+          "look_at_target_ui",
+          "move.arms",
+          "move.legs",
+          "riding.arms",
+          "riding.legs",
+          "riding.root",
+          "root",
+          "shield_block_main_hand",
+          "shield_block_off_hand",
+          "skeleton_attack",
+          "sleeping",
+          "sneaking",
+          "swimming",
+          "swimming.legs",
+          "third_person_bow_equipped",
+          "third_person_crossbow_equipped",
+          "tooting_goat_horn",
+          "use_item_progress"
+        ],
+        "format_version": "1.10.0",
+        "geometry_slots": [
+          "cape",
+          "default"
+        ],
+        "materials": {
+          "animated": "player_animated",
+          "cape": "entity_alphatest",
+          "default": "entity_alphatest",
+          "spectator": "player_spectator"
+        },
+        "pre_animation_count": 11,
+        "render_controllers": [
+          {
+            "controller.render.player.first_person_spectator": "variable.is_first_person && query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person_spectator": "!variable.is_first_person && !variable.map_face_icon && query.is_spectator"
+          },
+          {
+            "controller.render.player.first_person": "variable.is_first_person && !query.is_spectator"
+          },
+          {
+            "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon && !query.is_spectator"
+          },
+          {
+            "controller.render.player.map": "variable.map_face_icon"
+          }
+        ],
+        "script_keys": [
+          "animate",
+          "initialize",
+          "pre_animation",
+          "scale"
+        ]
+      }
+    },
+    "vanilla_1.26.0": {
+      "archives": {
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          0
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          0
+        ]
+      }
+    },
+    "vanilla_1.26.10": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 13,
+          "encoding": "json",
+          "entries": 13
+        },
+        "animations.brarchive": {
+          "documents": 13,
+          "encoding": "json",
+          "entries": 13
+        },
+        "attachables.brarchive": {
+          "documents": 59,
+          "encoding": "json",
+          "entries": 59
+        },
+        "entity.brarchive": {
+          "documents": 41,
+          "encoding": "json",
+          "entries": 41
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "render_controllers.brarchive": {
+          "documents": 40,
+          "encoding": "json",
+          "entries": 40
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          10
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          10
+        ]
+      }
+    },
+    "vanilla_1.26.20": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          20
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          20
+        ]
+      }
+    },
+    "vanilla_1.26.30": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "animations.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "biomes.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "entity.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 6
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          30
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          30
+        ]
+      }
+    },
+    "vanilla_1.26.40": {
+      "archives": {
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          40
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          40
+        ]
+      }
+    },
+    "vanilla_1.26.50": {
+      "archives": {
+        "biomes.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "block_culling.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 4
+        },
+        "entity.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        },
+        "fogs.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "particles.brarchive": {
+          "documents": 0,
+          "encoding": "compiled",
+          "entries": 15
+        },
+        "render_controllers.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 3,
+          "encoding": "json",
+          "entries": 3
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          50
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          50
+        ]
+      }
+    },
+    "vanilla_1.26.60": {
+      "archives": {
+        "animation_controllers.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "animations.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "entity.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        },
+        "models.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        },
+        "sounds.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "textures.brarchive": {
+          "documents": 0,
+          "encoding": "empty",
+          "entries": 0
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          26,
+          60
+        ],
+        "name": "resourcePack.vanilla.name",
+        "uuid": "0575c61f-a5da-4b7f-9961-ffda2908861e",
+        "version": [
+          1,
+          26,
+          60
+        ]
+      }
+    },
+    "vanilla_base": {
+      "archives": {
+        "materials.brarchive": {
+          "documents": 4,
+          "encoding": "json",
+          "entries": 8
+        },
+        "texts.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 3
+        },
+        "textures.brarchive": {
+          "documents": 1,
+          "encoding": "json",
+          "entries": 1
+        },
+        "ui.brarchive": {
+          "documents": 2,
+          "encoding": "json",
+          "entries": 2
+        }
+      },
+      "manifest": {
+        "min_engine_version": [
+          1,
+          13,
+          0
+        ],
+        "name": "resourcePack.vanilla_base.name",
+        "uuid": "9ae3d2cc-7811-404c-b578-cb27689c8ac5",
+        "version": [
+          0,
+          0,
+          1
+        ]
+      }
+    }
+  },
+  "source": "resource_packs part 1"
+}
