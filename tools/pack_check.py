@@ -380,7 +380,8 @@ def collect_materials(root: str, report: Report):
             continue
         block = data.get("materials")
         if isinstance(block, dict):
-            names.update(k for k in block if k != "version")
+            # Keys look like "name:parent"; the entity references the base name.
+            names.update(k.split(":", 1)[0] for k in block if k != "version")
     if names:
         report.note("materials: pack adds " + ", ".join(sorted(names)))
     return names
@@ -400,7 +401,7 @@ def animation_aliases(parsed):
     return by_layer
 
 
-def check_entity_maps(parsed, definitions, report: Report):
+def check_entity_maps(parsed, definitions, report: Report, custom_materials=frozenset()):
     defined = {kind: set(table) for kind, table in definitions.items()}
     for rel, data in parsed.items():
         for section in ENTITY_SECTIONS:
@@ -429,7 +430,7 @@ def check_entity_maps(parsed, definitions, report: Report):
                     _unresolved(report, rel, f"geometry['{slot}'] -> {geometry}", geometry)
             for slot, material in (description.get("materials") or {}).items():
                 if isinstance(material, str):
-                    if material not in VANILLA_MATERIALS and not material.startswith("ambient_uv"):
+                    if material not in VANILLA_MATERIALS and material not in custom_materials:
                         report.warn(f"{rel}: material '{material}' (slot {slot}) is not a vanilla material")
             for slot, texture in (description.get("textures") or {}).items():
                 if not isinstance(texture, str):
@@ -541,8 +542,9 @@ def main(argv=None):
 
     check_manifest(root, report)
     parsed, definitions = collect(root, report)
+    custom_materials = collect_materials(root, report)
     check_duplicate_layers(definitions, report)
-    check_entity_maps(parsed, definitions, report)
+    check_entity_maps(parsed, definitions, report, custom_materials)
     check_controller_aliases(parsed, report)
     check_particles(parsed, definitions, report)
     check_subpack_overrides(root, report)

@@ -196,6 +196,18 @@ class PackCheckTests(unittest.TestCase):
         _, out = run(self.root)
         self.assertTrue(any("not a vanilla material" in w for w in out["warnings"]), out["warnings"])
 
+    def test_pack_defined_material_does_not_warn(self):
+        entity = json.loads(json.dumps(ENTITY))
+        entity["minecraft:client_entity"]["description"]["materials"]["hud"] = "hud_armor"
+        material = {"materials": {"version": "1.0.0", "hud_armor:armor": {"+defines": ["USE_OVERLAY"]}}}
+        make_pack(self.root, **{
+            "subpacks/default/entity/test.entity.json": entity,
+            "materials/entity.material": material,
+        })
+        code, out = run(self.root)
+        self.assertEqual(code, 0, out)
+        self.assertFalse(any("not a vanilla material" in w for w in out["warnings"]), out["warnings"])
+
     def test_orphan_animation_alias_warns(self):
         controller = {
             "format_version": "1.10.0",

@@ -9,6 +9,8 @@
         "default": "entity_alphatest",
         "cape": "entity_alphatest",
         "animated": "player_animated",
+        "hud_armor": "hud_armor",
+
         "spectator": "player_spectator",
 
         "ambient_armor": "armor",
@@ -18,6 +20,35 @@
       "textures": {
         "default": "textures/entity/steve",
         "cape": "textures/entity/cape_invisible",
+        "hud_empty_armor_slot": "textures/ui/empty_armor_slot",
+        "hud_leather_helmet": "textures/items/leather_helmet",
+        "hud_chainmail_helmet": "textures/items/chainmail_helmet",
+        "hud_iron_helmet": "textures/items/iron_helmet",
+        "hud_diamond_helmet": "textures/items/diamond_helmet",
+        "hud_gold_helmet": "textures/items/gold_helmet",
+        "hud_turtle_helmet": "textures/items/turtle_helmet",
+        "hud_netherite_helmet": "textures/items/netherite_helmet",
+        "hud_pumpkin": "textures/ui/armor_hud/pumpkin",
+        "hud_leather_chestplate": "textures/items/leather_chestplate",
+        "hud_chainmail_chestplate": "textures/items/chainmail_chestplate",
+        "hud_iron_chestplate": "textures/items/iron_chestplate",
+        "hud_diamond_chestplate": "textures/items/diamond_chestplate",
+        "hud_gold_chestplate": "textures/items/gold_chestplate",
+        "hud_elytra": "textures/items/elytra",
+        "hud_netherite_chestplate": "textures/items/netherite_chestplate",
+        "hud_leather_leggings": "textures/items/leather_leggings",
+        "hud_chainmail_leggings": "textures/items/chainmail_leggings",
+        "hud_iron_leggings": "textures/items/iron_leggings",
+        "hud_diamond_leggings": "textures/items/diamond_leggings",
+        "hud_gold_leggings": "textures/items/gold_leggings",
+        "hud_netherite_leggings": "textures/items/netherite_leggings",
+        "hud_leather_boots": "textures/items/leather_boots",
+        "hud_chainmail_boots": "textures/items/chainmail_boots",
+        "hud_iron_boots": "textures/items/iron_boots",
+        "hud_diamond_boots": "textures/items/diamond_boots",
+        "hud_gold_boots": "textures/items/gold_boots",
+        "hud_netherite_boots": "textures/items/netherite_boots",
+
 
         "leather": "textures/models/armor/leather_1",
         "leather_leggings": "textures/models/armor/leather_2",
@@ -37,6 +68,11 @@
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
+        "hud_helmet": "geometry.hud_helmet",
+        "hud_chestplate": "geometry.hud_chestplate",
+        "hud_leggings": "geometry.hud_leggings",
+        "hud_boots": "geometry.hud_boots",
+
         "cape": "geometry.cape",
         "cape_root_parent": "geometry.cape_root_parent",
 
@@ -53,8 +89,13 @@
           "variable.short_arm_offset_left": "public",
           "variable.short_arm_offset_right": "public"
         },
-        "scale": "0.9375",
+        "scale": "q.is_in_ui ? 1.0 : (v.is_paperdoll ? 1.0 : 0.9375)",
         "initialize": [
+          "v.is_enchanted_helmet = 0.0;",
+          "v.is_enchanted_chestplate = 0.0;",
+          "v.is_enchanted_leggings = 0.0;",
+          "v.is_enchanted_boots = 0.0;",
+          "v.render_in_hud = 0.0;",
           "v.short_arm_offset_left = 0.0;",
           "v.short_arm_offset_right = 0.0;",
           "v.is_holding_right = 0.0;",
@@ -99,6 +140,11 @@
           "v.is_valid_player = 0.0;"
         ],
         "pre_animation": [
+          "v.is_enchanted_helmet = q.armor_material_slot(0) == 1 || q.armor_material_slot(0) == 3;",
+          "v.is_enchanted_chestplate = q.armor_material_slot(1) == 1 || q.armor_material_slot(1) == 3;",
+          "v.is_enchanted_leggings = q.armor_material_slot(2) == 1 || q.armor_material_slot(2) == 3;",
+          "v.is_enchanted_boots = q.armor_material_slot(3) == 1 || q.armor_material_slot(3) == 3;",
+          "v.render_in_hud = q.is_in_ui && q.is_on_screen && q.is_alive;",
           // Restrict certain player entities from updating variables that are based on historical values.
           "v.is_valid_player = !q.is_in_ui && !v.is_paperdoll;",
 
@@ -129,6 +175,7 @@
           "v.boot_layer_visible = 1.0;"
         ],
         "animate": [
+          { "armor_hud": "q.is_in_ui" },
           "root",
           "compute_modified_swim_speed",
           "compute_swim_crawl_amount_exclusive",
@@ -144,6 +191,7 @@
         "hurt": "ambient:hurt"
       },
       "animations": {
+        "armor_hud": "animation.armor_hud",
         "disable_attachables": "animation.player.disable_attachables",
         "hurt_time": "controller.animation.player.hurt_time",
         "hurt_particle_controller": "controller.animation.player.hurt_particle",
@@ -233,6 +281,10 @@
         "crawling.legs": "animation.player.crawl.legs"
       },
       "render_controllers": [
+        { "controller.render.hud_helmet": "v.render_in_hud" },
+        { "controller.render.hud_chestplate": "v.render_in_hud" },
+        { "controller.render.hud_leggings": "v.render_in_hud" },
+        { "controller.render.hud_boots": "v.render_in_hud" },
         { "controller.render.player.first_person_spectator": "v.is_first_person && q.is_spectator" },
         { "controller.render.player.third_person_spectator": "!v.is_first_person && !v.map_face_icon && q.is_spectator" },
         { "controller.render.player.first_person": "v.is_first_person && !q.is_spectator" },

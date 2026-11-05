@@ -7,6 +7,15 @@
       "+defines": [
         "USE_UV_ANIM"
       ]
+    },
+
+    // Armor HUD icon material (ported from XeroxClient by @Greninja):
+    // USE_OVERLAY = enchant glint tint, USE_COLOR_MASK = leather dye tint.
+    "hud_armor:armor": {
+      "+defines": [
+        "USE_OVERLAY",
+        "USE_COLOR_MASK"
+      ]
     }
   }
 }

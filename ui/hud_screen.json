@@ -1,5 +1,43 @@
 // This file was modified by ambient (ambiennt on discord). Do not use or redistribute this file or its contents without explicit permission from the author.
 {
+  // === Armor HUD (ported from XeroxClient by @Greninja) ===
+  // Force the HUD paper-doll renderer on and shove the doll body far off-screen;
+  // the armor-icon geometry (model-space y=500) is what stays visible above the hotbar.
+  // Visibility follows #hud_visible, so it still hides together with the HUD (F1).
+  "hud_player_renderer/hud_player": {
+    "property_bag": { "#look_at_cursor": true },
+    "allow_clipping": false,
+    "offset": [ "114514%x", "1919810%x" ]
+  },
+  "hud_player_renderer": {
+    "size": [ 20, 20 ],
+    "bindings": [
+      {
+        "binding_type": "global",
+        "binding_name": "#hud_visible",
+        "binding_name_override": "#visible",
+        "binding_condition": "always"
+      }
+    ],
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          {
+            "armor_hud_player_renderer": {
+              "type": "custom",
+              "renderer": "hud_player_renderer",
+              "layer": -2,
+              "property_bag": { "#look_at_cursor": true },
+              "size": [ "100%sm", "100%sm" ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+
   "vignette_renderer": {
     "ignored": true
   },

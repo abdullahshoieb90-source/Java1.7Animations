@@ -1,0 +1,26 @@
+// Armor HUD ported from XeroxClient by @Greninja (Bilibili: Greninja_).
+// Original license allows personal modification only; do not publicly
+// redistribute without the author's permission (see XeroxClient LICENSE.txt).
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.armor_hud": {
+      "loop": true,
+      "bones": {
+        "armor_hud": {
+          "scale": "q.is_gliding ? 1.640625 : 1",
+          "position": [
+            0,
+            "q.is_swimming ? -20",
+            0
+          ],
+          "rotation": [
+            "q.is_gliding ? -q.body_x_rotation-90",
+            "(q.is_riding ? q.target_y_rotation)+(q.is_gliding ? q.body_y_rotation)",
+            0
+          ]
+        }
+      }
+    }
+  }
+}
