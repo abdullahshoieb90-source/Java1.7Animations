@@ -1,12 +1,3 @@
-### v2.6.0
-
-- Added an always-on **Armor HUD** inspired by XeroxClient's (original implementation — no XeroxClient files are copied): the vanilla armor-points bar is replaced by four equipped-armor item icons above the hotbar
-    - Empty-slot placeholders, leather dye tint, and turtle shell / elytra / copper / carved pumpkin support
-    - Drawn entirely client-side through a `live_player_renderer`; no behavior pack required
-    - HUD position is tweakable via `offset` in `ui/armor_hud.json` (default `[42, -40]`)
-    - Enchantment glint on the HUD icons is not simulated; copper icons require a game version that includes copper armor
-- The pack validator now accepts materials defined in `materials/*.material` instead of warning about them
-
 ### v2.5.1
 
 - Added `No Armor Overlay + Console Edition Eat Animation` subpack
