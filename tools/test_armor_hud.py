@@ -1,12 +1,12 @@
-"""Regression tests for the Armor HUD wiring (v2.6.1 fix).
+"""Regression tests for the Armor HUD wiring (v2.6.1 + v2.6.2 fixes).
 
-The HUD broke on Android because:
-  - player scripts stopped updating off-screen (missing should_update_effects_offscreen)
-  - the render gate depended on q.is_on_screen (false inside live_player_renderer)
-  - part_visibility also queried q.is_on_screen
-  - the material lacked USE_OVERLAY
+v2.6.1 addressed off-screen updates, q.is_on_screen gating, material defines,
+and UI insertion. v2.6.2 addresses the remaining Android failure: the icon
+quads are authored at y=500, but the player entity scale (0.9375) pulled them
+down to y=468.75, outside the live_player_renderer viewport. A root-bone
+animation must cancel that scale and stabilize the icons while moving.
 
-These tests ensure the fix stays in place across all 12 subpacks.
+These tests ensure the fixes stay in place across all 12 subpacks.
 """
 
 import glob
@@ -139,6 +139,50 @@ class ArmorHudUITests(unittest.TestCase):
         self.assertEqual(renderer["renderer"], "live_player_renderer")
         self.assertEqual(renderer["offset"], [-24, 485.5])
         self.assertGreaterEqual(renderer.get("layer", 0), 1)
+
+
+class ArmorHudPlacementTests(unittest.TestCase):
+    """v2.6.2: the y=500 quads must be scale-compensated into the renderer."""
+
+    def test_root_bone_animation_cancels_player_scale(self):
+        data = load("animations/player.armor_hud.animation.json")
+        anim = data["animations"]["animation.player.j17_armor_hud"]
+        self.assertIs(anim.get("loop"), True)
+        bone = anim["bones"]["j17_armor_hud"]
+        self.assertEqual(bone["scale"], "1.0 / 0.9375")
+        self.assertIn("-20.0", bone["position"][1])
+        self.assertIn("0.9375", bone["position"][1])
+        self.assertIn("q.is_swimming", bone["position"][1])
+        self.assertIn("q.is_crawling", bone["position"][1])
+        self.assertIn("q.is_gliding", bone["rotation"][0])
+        self.assertIn("q.is_riding", bone["rotation"][1])
+
+    def test_animation_wired_in_all_subpacks(self):
+        for path in sorted(glob.glob(os.path.join(ROOT, "subpacks", "*", "entity", "player.entity.json"))):
+            desc = pack_check.load_json(path)["minecraft:client_entity"]["description"]
+            self.assertEqual(
+                desc["animations"].get("j17_armor_hud"),
+                "animation.player.j17_armor_hud",
+                f"{path}: missing HUD placement animation alias",
+            )
+            self.assertIn(
+                {"j17_armor_hud": "q.is_in_ui"},
+                desc["scripts"]["animate"],
+                f"{path}: HUD placement animation must run while in the HUD",
+            )
+
+    def test_geometry_root_bone_matches_animation(self):
+        data = load("models/entity/armor_hud.geo.json")
+        for geo in data["minecraft:geometry"]:
+            self.assertEqual(geo["bones"][0]["name"], "j17_armor_hud")
+            cube = geo["bones"][1]["cubes"][0]
+            self.assertEqual(cube["origin"][1], 500)
+            self.assertEqual(cube["size"], [16, 16, 0])
+
+    def test_light_color_multiplier(self):
+        data = load("render_controllers/armor_hud.render_controllers.json")
+        for name, rc in data["render_controllers"].items():
+            self.assertEqual(rc.get("light_color_multiplier"), 1.25, name)
 
 
 if __name__ == "__main__":
