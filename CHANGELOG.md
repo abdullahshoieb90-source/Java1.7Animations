@@ -1,12 +1,3 @@
-### v2.6.2
-
-- Fixed the Armor HUD icons still not appearing on Android after v2.6.1:
-    - The icon quads are authored at `y=500`, but the player entity scale (`0.9375`) pulled them down to `y=468.75`, outside the `live_player_renderer` viewport. A new root-bone animation (`animation.player.j17_armor_hud`) cancels that scale on the HUD root bone only.
-    - The same animation keeps the icons level while swimming/crawling and compensates riding/gliding rotation.
-    - The animation is wired into all 12 subpacks and runs only while the player is drawn in the HUD (`q.is_in_ui`).
-    - HUD icon controllers now use a fixed `light_color_multiplier` so the icons stay bright.
-- Added regression tests for the placement animation and its wiring across all subpacks.
-
 ### v2.6.1
 
 - Fixed the Armor HUD icons not rendering on some Bedrock builds (reported on Android):

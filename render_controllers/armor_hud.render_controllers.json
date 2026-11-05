@@ -36,7 +36,6 @@
       },
       "ignore_lighting": true,
       "filter_lighting": true,
-      "light_color_multiplier": 1.25,
       "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_chestplate": {
@@ -67,7 +66,6 @@
       },
       "ignore_lighting": true,
       "filter_lighting": true,
-      "light_color_multiplier": 1.25,
       "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_leggings": {
@@ -98,7 +96,6 @@
       },
       "ignore_lighting": true,
       "filter_lighting": true,
-      "light_color_multiplier": 1.25,
       "part_visibility": [ { "*": true } ]
     },
     "controller.render.j17_armor_hud_boots": {
@@ -129,7 +126,6 @@
       },
       "ignore_lighting": true,
       "filter_lighting": true,
-      "light_color_multiplier": 1.25,
       "part_visibility": [ { "*": true } ]
     }
   }

@@ -173,7 +173,6 @@
         ],
         "animate": [
           "root",
-          { "j17_armor_hud": "q.is_in_ui" },
           "compute_modified_swim_speed",
           "compute_swim_crawl_amount_exclusive",
           "hurt_time",
@@ -218,7 +217,6 @@
         "root": "controller.animation.player.root",
         "base_controller": "controller.animation.player.base",
         "hudplayer": "controller.animation.player.hudplayer",
-        "j17_armor_hud": "animation.player.j17_armor_hud",
         "humanoid_base_pose": "animation.humanoid.base_pose",
         "look_at_target": "controller.animation.humanoid.look_at_target",
         "look_at_target_ui": "animation.player.look_at_target.ui",
