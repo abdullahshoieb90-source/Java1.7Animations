@@ -12,7 +12,6 @@
         "armor_hud_renderer": {
           "type": "custom",
           "renderer": "live_player_renderer",
-          "layer": 5,
           "size": [16, 16],
           "offset": [-24, 485.5]
         }
