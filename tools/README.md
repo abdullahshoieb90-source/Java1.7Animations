@@ -9,6 +9,10 @@ python3 tools/pack_check.py --verbose # also list vanilla ids that are reference
 python3 tools/test_pack_check.py      # self-tests for the validator
 python3 tools/build_mcpack.py         # build artifacts/Java1.7Animations_v<version>.mcpack
 python3 tools/build_mcpack.py --split # one merged archive per subpack
+
+python3 tools/brarchive.py info path/to/entities.brarchive   # read vanilla __brarchive
+python3 tools/vanilla_index.py /path/to/behavior_packs --out docs/vanilla_reference.json
+python3 tools/test_brarchive.py       # self-tests for the archive reader
 ```
 
 ## `pack_check.py`
@@ -57,3 +61,28 @@ are built directly:
 Output is deterministic: entries are sorted and zip timestamps are pinned, so
 rebuilding an unchanged pack produces byte-identical archives. Files land in
 `artifacts/`, which is git-ignored.
+
+## `brarchive.py`
+
+From ~1.21 Bedrock ships the vanilla behaviour pack as `__brarchive` containers
+instead of loose JSON. This reader opens them:
+
+| encoding | meaning |
+|---|---|
+| `json` | one JSON document per header entry, separated by a few non-JSON bytes |
+| `compiled` | binary chunked form (`item_catalog`, `items`, `shapes`); only names are exposed |
+| `empty` | `count == 0`, e.g. the `server_*_library` packs |
+| `unknown` | a codec that is not decoded yet (a few `scripts`/older `recipes`) |
+
+The format is documented in the module docstring: 12-byte header (magic
+`0xB125277D`, hash, count), then 256-byte name records, then the payload region.
+The per-record `u32` is an opaque id, **not** a length — treating it as a length
+is the mistake that makes naive parsers produce garbled documents.
+
+## `vanilla_index.py`
+
+Indexes a game-shipped `behavior_packs/` dump into `docs/vanilla_reference.json`:
+per pack folder the manifest metadata, the entity identifiers, the component keys
+and the encoding of every archive. See `docs/vanilla-notes.md` for what that
+dump revealed (patch-layer folders, `minecraft:player` components, codec
+coverage).
