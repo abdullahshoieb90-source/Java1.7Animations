@@ -194,7 +194,20 @@ class PackCheckTests(unittest.TestCase):
         entity["minecraft:client_entity"]["description"]["materials"]["default"] = "not_a_material"
         make_pack(self.root, **{"subpacks/default/entity/test.entity.json": entity})
         _, out = run(self.root)
-        self.assertTrue(any("not a vanilla material" in w for w in out["warnings"]), out["warnings"])
+        self.assertTrue(any("not a vanilla or pack-defined material" in w for w in out["warnings"]), out["warnings"])
+
+    def test_pack_defined_material_is_accepted(self):
+        entity = json.loads(json.dumps(ENTITY))
+        entity["minecraft:client_entity"]["description"]["materials"]["default"] = "my_custom"
+        make_pack(
+            self.root,
+            **{
+                "subpacks/default/entity/test.entity.json": entity,
+                "materials/entity.material": {"materials": {"version": "1.0.0", "my_custom:entity": {}}},
+            },
+        )
+        _, out = run(self.root)
+        self.assertFalse(any("my_custom" in w for w in out["warnings"]), out["warnings"])
 
     def test_orphan_animation_alias_warns(self):
         controller = {
