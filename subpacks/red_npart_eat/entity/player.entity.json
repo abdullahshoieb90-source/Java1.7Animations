@@ -10,7 +10,6 @@
         "cape": "entity_alphatest",
         "animated": "player_animated",
         "spectator": "player_spectator",
-        "j17_armor_hud": "j17_armor_hud",
 
         "ambient_armor": "armor",
         "ambient_armor_leather": "armor_leather",
@@ -34,42 +33,7 @@
         "elytra": "textures/models/armor/elytra",
         "netherite": "textures/models/armor/netherite_1",
         "netherite_leggings": "textures/models/armor/netherite_2",
-        "fire": "textures/blocks/fire_0",
-        "j17_hud_empty_helmet": "textures/ui/empty_armor_slot_helmet",
-        "j17_hud_empty_chestplate": "textures/ui/empty_armor_slot_chestplate",
-        "j17_hud_empty_leggings": "textures/ui/empty_armor_slot_leggings",
-        "j17_hud_empty_boots": "textures/ui/empty_armor_slot_boots",
-        "j17_hud_leather_helmet": "textures/items/leather_helmet",
-        "j17_hud_leather_chestplate": "textures/items/leather_chestplate",
-        "j17_hud_leather_leggings": "textures/items/leather_leggings",
-        "j17_hud_leather_boots": "textures/items/leather_boots",
-        "j17_hud_chainmail_helmet": "textures/items/chainmail_helmet",
-        "j17_hud_chainmail_chestplate": "textures/items/chainmail_chestplate",
-        "j17_hud_chainmail_leggings": "textures/items/chainmail_leggings",
-        "j17_hud_chainmail_boots": "textures/items/chainmail_boots",
-        "j17_hud_iron_helmet": "textures/items/iron_helmet",
-        "j17_hud_iron_chestplate": "textures/items/iron_chestplate",
-        "j17_hud_iron_leggings": "textures/items/iron_leggings",
-        "j17_hud_iron_boots": "textures/items/iron_boots",
-        "j17_hud_diamond_helmet": "textures/items/diamond_helmet",
-        "j17_hud_diamond_chestplate": "textures/items/diamond_chestplate",
-        "j17_hud_diamond_leggings": "textures/items/diamond_leggings",
-        "j17_hud_diamond_boots": "textures/items/diamond_boots",
-        "j17_hud_gold_helmet": "textures/items/gold_helmet",
-        "j17_hud_gold_chestplate": "textures/items/gold_chestplate",
-        "j17_hud_gold_leggings": "textures/items/gold_leggings",
-        "j17_hud_gold_boots": "textures/items/gold_boots",
-        "j17_hud_netherite_helmet": "textures/items/netherite_helmet",
-        "j17_hud_netherite_chestplate": "textures/items/netherite_chestplate",
-        "j17_hud_netherite_leggings": "textures/items/netherite_leggings",
-        "j17_hud_netherite_boots": "textures/items/netherite_boots",
-        "j17_hud_copper_helmet": "textures/items/copper_helmet",
-        "j17_hud_copper_chestplate": "textures/items/copper_chestplate",
-        "j17_hud_copper_leggings": "textures/items/copper_leggings",
-        "j17_hud_copper_boots": "textures/items/copper_boots",
-        "j17_hud_turtle_helmet": "textures/items/turtle_helmet",
-        "j17_hud_elytra": "textures/items/elytra",
-        "j17_hud_pumpkin": "textures/blocks/pumpkin_face_off"
+        "fire": "textures/blocks/fire_0"
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
@@ -82,11 +46,7 @@
         "player_armor_leggings_custom_hurt": "geometry.player_armor_leggings_custom_hurt",
         "player_elytra_custom": "geometry.player_elytra_custom",
         "player_elytra_custom_hurt": "geometry.player_elytra_custom_hurt",
-        "player_fire": "geometry.player_fire",
-        "j17_hud_helmet": "geometry.j17_armor_hud_helmet",
-        "j17_hud_chestplate": "geometry.j17_armor_hud_chestplate",
-        "j17_hud_leggings": "geometry.j17_armor_hud_leggings",
-        "j17_hud_boots": "geometry.j17_armor_hud_boots"
+        "player_fire": "geometry.player_fire"
       },
       "scripts": {
         "variables": {
@@ -136,8 +96,7 @@
           "v.elytra_sneak_amount = (q.is_sneaking && !q.is_gliding && !q.is_swimming) ? 1.0 : 0.0;",
           "v.head_rot_detached_from_camera = 0.0;",
           "t.head_rot_detached_from_camera = (q.is_sleeping || q.is_riding || q.is_gliding || q.is_swimming || q.is_crawling || v.damage_nearby_mobs); v.looks_at_camera_amount = (v.is_first_person || t.head_rot_detached_from_camera) ? 1.0 : 0.0;",
-          "v.is_valid_player = 0.0;",
-          "v.j17_render_in_hud = 0.0;"
+          "v.is_valid_player = 0.0;"
         ],
         "pre_animation": [
           // Restrict certain player entities from updating variables that are based on historical values.
@@ -146,29 +105,28 @@
           "v.is_in_menu = (q.time_stamp <= 0);",
           "v.head_rot_detached_from_camera = (q.is_sleeping || q.is_riding || q.is_gliding || q.is_swimming || q.is_crawling || v.damage_nearby_mobs);",
           "v.is_valid_player ? { t.looks_at_camera_amount_raw = (v.is_first_person || v.head_rot_detached_from_camera) ? 1.0 : 0.0; v.looks_at_camera_amount = v.looks_at_camera_amount + (t.looks_at_camera_amount_raw - v.looks_at_camera_amount) * (1 - math.pow((1 - 0.8), q.delta_time / 0.2)); };",
-
+          
           // BUG: scoping spyglass in 1st person makes the new limb animation freeze, I don't how to fix this.
           "v.is_valid_player ? { t.normalized_vertical_speed = math.clamp(math.pow(math.abs(q.position_delta(1) + 0.0784), 0.225) * 1.175, 0, 0.785); v.vertical_speed = v.vertical_speed + (t.normalized_vertical_speed - v.vertical_speed) * (1 - math.pow((1 - 0.85), q.delta_time / 0.15)); };",
           "v.is_valid_player ? { v.raw_move_speed = math.clamp(math.sqrt(q.position_delta(0) * q.position_delta(0) * (1 - v.vertical_speed) + q.position_delta(2) * q.position_delta(2) * (1 - v.vertical_speed)) * 1.1224341224, 0, 0.1532167643) * 6.5267009427; };",
           "v.is_valid_player ? { v.modified_move_speed = v.modified_move_speed + ((v.raw_move_speed - v.modified_move_speed) * (1 - math.pow((1 - 0.8), q.delta_time / 0.2))); };",
           "v.is_valid_player ? { v.modified_distance_moved = v.modified_distance_moved + (v.modified_move_speed * q.delta_time * 20); };",
-
+          
           "v.is_valid_player ? { t.rot_y_delta = q.body_y_rotation - q.head_y_rotation(0); v.relative_cape_rotation = q.is_sleeping ? 0 : (v.modified_move_speed * (math.sqrt(v.modified_move_speed) - math.sqrt(q.cape_flap_amount)) * math.sin(t.rot_y_delta)); };",
-
+          
           "v.is_valid_player ? { v.elytra_tilt_ratio = (q.position_delta(1) < 0) ? 1 - math.pow(-q.movement_direction(1), 1.5) : 1; };",
           "v.is_valid_player ? { t.lerp_pct = 0.8; t.lerp_time = 0.2; t.elytra_glide_amount_raw = q.is_gliding ? 1.0 : 0.0; v.elytra_glide_amount = v.elytra_glide_amount + (t.elytra_glide_amount_raw - v.elytra_glide_amount) * (1 - math.pow((1 - temp.lerp_pct), q.delta_time / t.lerp_time)); };",
           "v.is_valid_player ? { t.lerp_pct = 0.8; t.lerp_time = 0.2; t.elytra_sneak_amount_raw = (q.is_sneaking && !q.is_gliding && !q.is_swimming) ? 1.0 : 0.0; v.elytra_sneak_amount = v.elytra_sneak_amount + (t.elytra_sneak_amount_raw - v.elytra_sneak_amount) * (1 - math.pow((1 - temp.lerp_pct), q.delta_time / t.lerp_time)); };",
 
           "t.dist = (q.is_local_player ? v.modified_distance_moved : q.modified_distance_moved); t.speed = (q.is_local_player ? v.modified_move_speed : q.modified_move_speed); v.tcos0 = (math.cos(t.dist * 38.1971863421) * t.speed / v.gliding_speed_value) * 57.2957795131;",
-
-          "v.attack_body_rot_y = math.sin(math.sqrt(v.attack_time) * 360) * 11.4591559026;",
+          
+          "v.attack_body_rot_y = math.sin(math.sqrt(v.attack_time) * 360) * 11.4591559026;",        
           "v.item_use_normalized = (q.main_hand_item_use_duration > 0.0) ? (q.main_hand_item_use_duration - q.frame_alpha + 1) / q.main_hand_item_max_duration : 0.0;",
           "v.map_angle = math.clamp(1 - v.player_x_rotation / 45.1, 0, 1);",
           "v.helmet_layer_visible = !q.has_head_gear;",
           "v.chest_layer_visible = 1.0;",
           "v.leg_layer_visible = 1.0;",
-          "v.boot_layer_visible = 1.0;",
-          "v.j17_render_in_hud = q.is_in_ui && q.is_on_screen && q.is_alive;"
+          "v.boot_layer_visible = 1.0;"
         ],
         "animate": [
           "root",
@@ -288,11 +246,7 @@
         { "controller.render.player.armor.chestplate": "!v.is_first_person && !v.map_face_icon && (v.hurt_time > 0.0) && q.has_armor_slot(1) && !q.is_spectator && !q.is_invisible && !q.is_emoting" },
         { "controller.render.player.armor.leggings": "!v.is_first_person && !v.map_face_icon && (v.hurt_time > 0.0) && q.has_armor_slot(2) && !q.is_spectator && !q.is_invisible && !q.is_emoting" },
         { "controller.render.player.armor.boots": "!v.is_first_person && !v.map_face_icon && (v.hurt_time > 0.0) && q.has_armor_slot(3) && !q.is_spectator && !q.is_invisible && !q.is_emoting" },
-        { "controller.render.player.fire": "!v.is_first_person && !v.map_face_icon && q.is_alive && q.is_on_fire && !q.is_spectator" },
-        { "controller.render.j17_armor_hud_helmet": "v.j17_render_in_hud" },
-        { "controller.render.j17_armor_hud_chestplate": "v.j17_render_in_hud" },
-        { "controller.render.j17_armor_hud_leggings": "v.j17_render_in_hud" },
-        { "controller.render.j17_armor_hud_boots": "v.j17_render_in_hud" }
+        { "controller.render.player.fire": "!v.is_first_person && !v.map_face_icon && q.is_alive && q.is_on_fire && !q.is_spectator" }
       ],
       "enable_attachables": true
     }

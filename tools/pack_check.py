@@ -380,9 +380,7 @@ def collect_materials(root: str, report: Report):
             continue
         block = data.get("materials")
         if isinstance(block, dict):
-            # Material definitions are named "<name>:<parent>"; entities
-            # reference them by the <name> part only.
-            names.update(k.split(":", 1)[0] for k in block if k != "version")
+            names.update(k for k in block if k != "version")
     if names:
         report.note("materials: pack adds " + ", ".join(sorted(names)))
     return names
@@ -402,7 +400,7 @@ def animation_aliases(parsed):
     return by_layer
 
 
-def check_entity_maps(parsed, definitions, report: Report, pack_materials=frozenset()):
+def check_entity_maps(parsed, definitions, report: Report):
     defined = {kind: set(table) for kind, table in definitions.items()}
     for rel, data in parsed.items():
         for section in ENTITY_SECTIONS:
@@ -431,8 +429,8 @@ def check_entity_maps(parsed, definitions, report: Report, pack_materials=frozen
                     _unresolved(report, rel, f"geometry['{slot}'] -> {geometry}", geometry)
             for slot, material in (description.get("materials") or {}).items():
                 if isinstance(material, str):
-                    if material not in VANILLA_MATERIALS and material not in pack_materials:
-                        report.warn(f"{rel}: material '{material}' (slot {slot}) is not a vanilla or pack-defined material")
+                    if material not in VANILLA_MATERIALS and not material.startswith("ambient_uv"):
+                        report.warn(f"{rel}: material '{material}' (slot {slot}) is not a vanilla material")
             for slot, texture in (description.get("textures") or {}).items():
                 if not isinstance(texture, str):
                     report.error(f"{rel}: textures['{slot}'] is not a path string")
@@ -544,8 +542,7 @@ def main(argv=None):
     check_manifest(root, report)
     parsed, definitions = collect(root, report)
     check_duplicate_layers(definitions, report)
-    pack_materials = collect_materials(root, report)
-    check_entity_maps(parsed, definitions, report, pack_materials)
+    check_entity_maps(parsed, definitions, report)
     check_controller_aliases(parsed, report)
     check_particles(parsed, definitions, report)
     check_subpack_overrides(root, report)
