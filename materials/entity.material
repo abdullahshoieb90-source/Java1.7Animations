@@ -7,6 +7,12 @@
       "+defines": [
         "USE_UV_ANIM"
       ]
+    },
+
+    "j17_armor_hud:armor": {
+      "+defines": [
+        "USE_COLOR_MASK"
+      ]
     }
   }
 }

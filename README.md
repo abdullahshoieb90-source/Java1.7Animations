@@ -5,6 +5,9 @@
 
 This resource pack attempts to faithfully port over many player animations from Minecraft Java Edition v1.7 to Minecraft Bedrock Edition. Contributions are welcome in the form of pull requests! Please submit a detailed issue if you have a bug report.
 
+### Armor HUD (v2.6+):
+The pack ships an always-on **Armor HUD** inspired by XeroxClient's: the vanilla armor-points bar is replaced by four item icons (helmet, chestplate, leggings, boots) above the hotbar, with empty-slot placeholders, leather dye tint, and turtle shell / elytra / copper / carved pumpkin support. It is an original implementation (no XeroxClient files are copied) and works entirely client-side through a `live_player_renderer` — no behavior pack required. The HUD position can be tweaked via `offset` in `ui/armor_hud.json` (default `[42, -40]`). Enchantment glint on the icons is not simulated.
+
 ### Working on the pack:
 The repository is the pack itself: the root folder is what gets zipped into a `.mcpack`, and `subpacks/` holds the optional variants listed in `manifest.json`. Two dependency-free scripts live in [`tools/`](tools/README.md):
 
@@ -20,7 +23,7 @@ Run the validator before opening a pull request — it catches the usual breakag
 - **Releases** (`.github/workflows/release.yml`) publish a GitHub release with the `.mcpack`, SHA256 checksums and the matching CHANGELOG section when a version tag matching `manifest.json` is pushed:
 
 ```bash
-git tag v2.5.2 && git push origin v2.5.2
+git tag v2.6.0 && git push origin v2.6.0
 ```
 
 The release job fails with a clear message if the tag does not match the manifest version (bump the manifest first).
