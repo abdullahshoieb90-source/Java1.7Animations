@@ -20,7 +20,7 @@ Run the validator before opening a pull request — it catches the usual breakag
 - **Releases** (`.github/workflows/release.yml`) publish a GitHub release with the `.mcpack`, SHA256 checksums and the matching CHANGELOG section when a version tag matching `manifest.json` is pushed:
 
 ```bash
-git tag v2.5.2 && git push origin v2.5.2
+git tag v2.5.3 && git push origin v2.5.3
 ```
 
 The release job fails with a clear message if the tag does not match the manifest version (bump the manifest first).

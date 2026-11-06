@@ -1,3 +1,9 @@
+### v2.5.3
+
+- Fix Armor HUD not appearing: add the missing Xerox `root_panel` `live_player_renderer` hook instead of relying only on the paper-doll renderer
+- Keep HUD player scripts updating off-screen and stop using `q.is_on_screen` to cull the HUD icon quads
+- Run the Armor HUD bone animation unconditionally and bump the pack version for re-import
+
 ### v2.5.1
 
 - Added `No Armor Overlay + Console Edition Eat Animation` subpack

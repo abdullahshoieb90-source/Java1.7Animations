@@ -20,7 +20,7 @@
           ]
         }
       },
-      "geometry": "Geometry.hud_helmet",
+      "geometry": "geometry.hud_helmet",
       "materials": [
         {
           "*": "material.hud_armor"
@@ -58,7 +58,7 @@
       "filter_lighting": true,
       "part_visibility": [
         {
-          "*": "q.is_on_screen"
+          "*": true
         }
       ]
     },
@@ -77,7 +77,7 @@
           ]
         }
       },
-      "geometry": "Geometry.hud_chestplate",
+      "geometry": "geometry.hud_chestplate",
       "materials": [
         {
           "*": "material.hud_armor"
@@ -115,7 +115,7 @@
       "filter_lighting": true,
       "part_visibility": [
         {
-          "*": "q.is_on_screen"
+          "*": true
         }
       ]
     },
@@ -133,7 +133,7 @@
           ]
         }
       },
-      "geometry": "Geometry.hud_leggings",
+      "geometry": "geometry.hud_leggings",
       "materials": [
         {
           "*": "material.hud_armor"
@@ -171,7 +171,7 @@
       "filter_lighting": true,
       "part_visibility": [
         {
-          "*": "q.is_on_screen"
+          "*": true
         }
       ]
     },
@@ -189,7 +189,7 @@
           ]
         }
       },
-      "geometry": "Geometry.hud_boots",
+      "geometry": "geometry.hud_boots",
       "materials": [
         {
           "*": "material.hud_armor"
@@ -227,7 +227,7 @@
       "filter_lighting": true,
       "part_visibility": [
         {
-          "*": "q.is_on_screen"
+          "*": true
         }
       ]
     }

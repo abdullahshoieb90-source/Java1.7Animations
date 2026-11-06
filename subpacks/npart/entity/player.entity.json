@@ -90,6 +90,7 @@
           "variable.short_arm_offset_right": "public"
         },
         "scale": "q.is_in_ui ? 1.0 : (v.is_paperdoll ? 1.0 : 0.9375)",
+        "should_update_effects_offscreen": "1.0",
         "initialize": [
           "v.is_enchanted_helmet = 0.0;",
           "v.is_enchanted_chestplate = 0.0;",
@@ -144,7 +145,7 @@
           "v.is_enchanted_chestplate = q.armor_material_slot(1) == 1 || q.armor_material_slot(1) == 3;",
           "v.is_enchanted_leggings = q.armor_material_slot(2) == 1 || q.armor_material_slot(2) == 3;",
           "v.is_enchanted_boots = q.armor_material_slot(3) == 1 || q.armor_material_slot(3) == 3;",
-          "v.render_in_hud = q.is_in_ui && q.is_on_screen && q.is_alive;",
+          "v.render_in_hud = q.is_in_ui && q.is_alive;",
           // Restrict certain player entities from updating variables that are based on historical values.
           "v.is_valid_player = !q.is_in_ui && !v.is_paperdoll;",
 
@@ -175,7 +176,7 @@
           "v.boot_layer_visible = 1.0;"
         ],
         "animate": [
-          { "armor_hud": "q.is_in_ui" },
+          "armor_hud",
           "root",
           "compute_modified_swim_speed",
           "compute_swim_crawl_amount_exclusive",
