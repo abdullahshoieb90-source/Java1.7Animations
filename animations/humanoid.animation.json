@@ -2,6 +2,60 @@
 {
   "format_version": "1.10.0",
   "animations": {
+    // SpearAnimations.thirdPersonHandUse: Java's clamped SPEAR arm pose.
+    "animation.humanoid.melee_spear_hold": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightarm": {
+          "rotation": [
+            "math.clamp(v.tp_melee_spear_base_arm_rotation_x + q.target_x_rotation, -120.0, 30.0) - this",
+            "math.clamp(q.target_y_rotation - 5.729578, -60.0, 60.0) - this",
+            0.0
+          ]
+        },
+        "rightarm_custom": {
+          "rotation": [
+            "math.clamp(v.tp_melee_spear_base_arm_rotation_x + q.target_x_rotation, -120.0, 30.0) - this",
+            "math.clamp(q.target_y_rotation - 5.729578, -60.0, 60.0) - this",
+            0.0
+          ]
+        }
+      }
+    },
+    // SpearAnimations.thirdPersonUseItem. During attack overlap the controller
+    // applies melee_spear_attack first, matching Java's ItemInHandLayer order.
+    "animation.humanoid.melee_spear_use": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightarm": {
+          "rotation": [
+            "v.tp_melee_spear_use_arm_rotation_x",
+            "v.tp_melee_spear_use_arm_rotation_y",
+            "v.tp_melee_spear_use_arm_rotation_z"
+          ]
+        },
+        "rightarm_custom": {
+          "rotation": [
+            "v.tp_melee_spear_use_arm_rotation_x",
+            "v.tp_melee_spear_use_arm_rotation_y",
+            "v.tp_melee_spear_use_arm_rotation_z"
+          ]
+        },
+        "rightitem": {
+          "position": [
+            "math.sin(v.tp_melee_spear_use_item_rotation_z)",
+            "v.tp_melee_spear_use_item_position_y - 1.0 + math.cos(v.tp_melee_spear_use_item_rotation_x) * math.cos(v.tp_melee_spear_use_item_rotation_z) + math.sin(v.tp_melee_spear_use_item_rotation_x) * 2.5",
+            "6.4 * v.melee_spear_use_hit_feedback_amount - 2.5 - math.sin(v.tp_melee_spear_use_item_rotation_x) * math.cos(v.tp_melee_spear_use_item_rotation_z) + math.cos(v.tp_melee_spear_use_item_rotation_x) * 2.5"
+          ],
+          "rotation": [
+            { "x": "v.tp_melee_spear_use_item_rotation_x" },
+            { "z": "v.tp_melee_spear_use_item_rotation_z" }
+          ]
+        }
+      }
+    },
     "animation.humanoid.use_item_progress" : {
       "loop" : true,
       "bones" : {

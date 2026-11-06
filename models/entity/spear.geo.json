@@ -1,0 +1,27 @@
+// Centered 32x32 generated-item plane used by the Java spear display transforms.
+{
+  "format_version": "1.16.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.spear",
+        "texture_width": 32.0,
+        "texture_height": 32.0
+      },
+      "bones": [
+        {
+          "name": "spear",
+          "binding": "q.item_slot_to_bone_name(c.item_slot)",
+          "pivot": [ 0.0, 24.0, 0.0 ],
+          "texture_meshes": [
+            {
+              "position": [ -16.0, 23.5, -16.0 ],
+              "scale": [ 1.0, 0.5, 1.0 ],
+              "texture": "default"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

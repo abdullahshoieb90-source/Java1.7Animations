@@ -77,6 +77,61 @@
         }
       }
     },
+    "controller.animation.player.melee_spear": {
+      "initial_state": "hold",
+      "states": {
+        "hold": {
+          "animations": [ "third_person_melee_spear_hold" ],
+          "transitions": [
+            { "use": "v.item_use_normalized > 0.0" },
+            { "attack": "v.attack_time > 0.0" }
+          ]
+        },
+        "use": {
+          // Java applies thirdPersonAttackItem before thirdPersonUseItem during overlap.
+          "animations": [
+            "third_person_melee_spear_hold",
+            { "third_person_melee_spear_attack": "v.attack_time > 0.0" },
+            "third_person_melee_spear_use"
+          ],
+          "transitions": [
+            { "hold": "v.item_use_normalized == 0.0" }
+          ]
+        },
+        "attack": {
+          "animations": [ "third_person_melee_spear_hold", "third_person_melee_spear_attack" ],
+          "transitions": [
+            { "hold": "v.attack_time == 0.0" },
+            { "use": "v.item_use_normalized > 0.0" }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.first_person_melee_spear": {
+      "initial_state": "hold",
+      "states": {
+        "hold": {
+          "animations": [ "first_person_melee_spear_base", "first_person_melee_spear_hold" ],
+          "transitions": [
+            { "use": "v.item_use_normalized > 0.0" },
+            { "attack": "v.attack_time > 0.0" }
+          ]
+        },
+        "use": {
+          "animations": [ "first_person_melee_spear_base", "first_person_melee_spear_use" ],
+          "transitions": [
+            { "hold": "v.item_use_normalized == 0.0" }
+          ]
+        },
+        "attack": {
+          "animations": [ "first_person_melee_spear_base", "first_person_melee_spear_attack" ],
+          "transitions": [
+            { "hold": "v.attack_time == 0.0" },
+            { "use": "v.item_use_normalized > 0.0" }
+          ]
+        }
+      }
+    },
     "controller.animation.player.root": {
       "initial_state": "first_person",
       "states": {
@@ -84,9 +139,10 @@
           "animations": [
             "first_person_base_pose",
             "first_person_swap_item",
-            { "first_person_attack_controller": "(v.attack_time > 0.0) && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map')" },
+            { "first_person_attack_controller": "(v.attack_time > 0.0) && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map') && !v.melee_spear_equipped" },
             { "first_person_empty_hand": "!v.is_holding_right" },
-            { "first_person_map_controller": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map') || q.is_item_name_any('slot.weapon.offhand', 'minecraft:filled_map')" }
+            { "first_person_map_controller": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map') || q.is_item_name_any('slot.weapon.offhand', 'minecraft:filled_map')" },
+            { "first_person_melee_spear_controller": "v.melee_spear_equipped" }
           ],
           "transitions": [
             { "map_player": "v.map_face_icon" },
@@ -117,7 +173,7 @@
             { "sneaking": "q.is_sneaking && !q.is_sleeping && !q.is_swimming" },
             { "sleeping": "q.is_sleeping && q.is_alive" },
             "swim_crawl_controller",
-            { "attack.rotations": "v.attack_time > 0.0" },
+            { "attack.rotations": "(v.attack_time > 0.0) && !v.melee_spear_equipped" },
             { "shield_block_main_hand": "q.blocking && !q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') && q.is_item_name_any('slot.weapon.mainhand', 'minecraft:shield')" },
             { "shield_block_off_hand": "q.blocking && q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') && (v.item_use_normalized <= 0.0) && !q.item_is_charged" },
             { "crossbow_controller": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:crossbow')" },
@@ -130,7 +186,8 @@
             { "holding_brush": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:brush')" },
             { "brushing": "v.is_using_brush" },
 
-            { "use_item_progress": "((v.use_item_interval_progress > 0.0) || (v.use_item_startup_progress > 0.0)) && !v.is_brandishing_spear && !v.is_holding_spyglass && !v.is_tooting_goat_horn && !v.is_using_brush && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:bow', 'minecraft:crossbow', 'minecraft:fishing_rod')" }
+            { "use_item_progress": "((v.use_item_interval_progress > 0.0) || (v.use_item_startup_progress > 0.0)) && !v.is_brandishing_spear && !v.is_holding_spyglass && !v.is_tooting_goat_horn && !v.is_using_brush && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:bow', 'minecraft:crossbow', 'minecraft:fishing_rod')" },
+            { "third_person_melee_spear_controller": "v.melee_spear_equipped" }
           ],
           "transitions": [
             { "first_person": "v.is_first_person" },

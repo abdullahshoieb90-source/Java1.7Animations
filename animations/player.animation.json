@@ -33,6 +33,31 @@
         }
       }
     },
+    // SpearAnimations.thirdPersonAttackHand + thirdPersonAttackItem.
+    // The controller layers this over melee_spear_hold and before melee_spear_use.
+    "animation.player.melee_spear_attack": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "body": {
+          "rotation": [ 0.0, "v.attack_body_rot_y", 0.0 ]
+        },
+        "rightarm": {
+          "rotation": [ "v.tp_melee_spear_attack_arm_rotation_x", 0.0, 0.0 ]
+        },
+        "rightarm_custom": {
+          "rotation": [ "v.tp_melee_spear_attack_arm_rotation_x", 0.0, 0.0 ]
+        },
+        "rightitem": {
+          "position": [
+            0.0,
+            "-1.0 + math.cos(v.tp_melee_spear_attack_item_rotation_x) + math.sin(v.tp_melee_spear_attack_item_rotation_x) * (1.0 + v.tp_melee_spear_attack_forward_movement)",
+            "-1.0 - math.sin(v.tp_melee_spear_attack_item_rotation_x) + math.cos(v.tp_melee_spear_attack_item_rotation_x) * (1.0 + v.tp_melee_spear_attack_forward_movement)"
+          ],
+          "rotation": [ "v.tp_melee_spear_attack_item_rotation_x", 0.0, 0.0 ]
+        }
+      }
+    },
     "animation.player.cape": {
       "loop": true,
       "bones": {

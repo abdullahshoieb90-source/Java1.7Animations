@@ -1,0 +1,40 @@
+// Spear display transforms converted from Java 1.21.11's spear_in_hand.json.
+// Motion and hit feedback live on the owning player's rightitem bone so that
+// ItemInHandRenderer/ItemInHandLayer ordering is preserved in both perspectives.
+{
+  "format_version": "1.10.0",
+  "animations": {
+    "animation.spear.held_first_person": {
+      "loop": true,
+      "bones": {
+        "spear": {
+          "position": [ "c.item_slot == 'main_hand' ? -3.13 : 3.13", 2.0, 0.13 ],
+          "rotation": [ 0.0, 35.0, 90.0 ],
+          "scale": 0.68
+        }
+      }
+    },
+    "animation.spear.held_third_person": {
+      "loop": true,
+      "bones": {
+        "spear": {
+          "position": [ 0.0, -1.0, -5.0 ],
+          "rotation": [ 0.0, -45.0, -90.0 ],
+          "scale": 0.85
+        }
+      }
+    },
+    // Keep vanilla's per-tier hit sound, but do not add Bedrock's separate
+    // recoil keyframes: Java hitFeedbackAmount is already applied by the player.
+    "animation.spear.hit": {
+      "loop": false,
+      "animation_length": 0.5,
+      "override_previous_animation": false,
+      "sound_effects": {
+        "0.0": {
+          "effect": "hit"
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 // This file was modified by ambient (ambiennt on discord). Do not use or redistribute this file or its contents without explicit permission from the author.
+// Spear equations and item transforms ported from Minecraft Java 1.21.11 SpearAnimations/ItemInHandRenderer.
 {
   "format_version" : "1.10.0",
   "animations": {
@@ -25,6 +26,64 @@
         "rightarm" : {
           "position" : [ 13.15, "(v.short_arm_offset_right * 1.8) - 7.45", 10.5 ],
           "rotation" : [ 95.5, -40.0, 116.0 ]
+        }
+      }
+    },
+    // Java's generic first-person item path: applyItemArmTransform + spear display transform.
+    "animation.player.first_person.melee_spear_base": {
+      "loop": true,
+      "override_previous_animation": true,
+      "bones": {
+        "rightarm": {
+          "position": [ "-this", "-22.0 + v.short_arm_offset_right", "-this" ],
+          "rotation": [ "-this", "-this", "-this" ]
+        },
+        "rightitem": {
+          "position": [ "8.96 - this", "19.2 - this", "11.52 - this" ],
+          "rotation": [ "-this", "180.0 - this", "-this" ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_hold": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [ 0.0, 0.0, 0.0 ],
+          "rotation": [ 0.0, 0.0, 0.0 ]
+        }
+      }
+    },
+    // SpearAnimations.firstPersonUse, including both rotateAround pivots and hit feedback.
+    "animation.player.first_person.melee_spear_use": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [
+            "v.fp_melee_spear_use_item_position_x + 2.4 + math.cos(v.fp_melee_spear_use_item_rotation_y) * -2.4",
+            "v.fp_melee_spear_use_item_position_y + 1.6 + math.cos(-v.fp_melee_spear_use_item_rotation_x) * (-1.6 - 16.0 * v.melee_spear_use_hit_feedback_amount) + math.sin(-v.fp_melee_spear_use_item_rotation_x) * -math.sin(v.fp_melee_spear_use_item_rotation_y) * -2.4",
+            "v.fp_melee_spear_use_item_position_z - math.sin(-v.fp_melee_spear_use_item_rotation_x) * (-1.6 - 16.0 * v.melee_spear_use_hit_feedback_amount) + math.cos(-v.fp_melee_spear_use_item_rotation_x) * -math.sin(v.fp_melee_spear_use_item_rotation_y) * -2.4"
+          ],
+          "rotation": [
+            { "x": "v.fp_melee_spear_use_item_rotation_x" },
+            { "y": "v.fp_melee_spear_use_item_rotation_y" }
+          ]
+        }
+      }
+    },
+    // SpearAnimations.firstPersonAttack: outBack thrust, X rotation, then local Z recovery.
+    "animation.player.first_person.melee_spear_attack": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [
+            "1.6 * (v.melee_spear_attack_raise_scale - v.fp_melee_spear_attack_thrust_scale)",
+            "-1.2 * (v.melee_spear_attack_raise_scale - v.melee_spear_attack_recover_scale) - 4.0 * (v.melee_spear_attack_recover_scale - v.fp_melee_spear_attack_thrust_scale) * math.sin(v.fp_melee_spear_attack_item_rotation_x)",
+            "-10.4 * (v.melee_spear_attack_raise_scale - v.fp_melee_spear_attack_thrust_scale) + 4.0 * (v.melee_spear_attack_recover_scale - v.fp_melee_spear_attack_thrust_scale) * math.cos(v.fp_melee_spear_attack_item_rotation_x)"
+          ],
+          "rotation": [ "v.fp_melee_spear_attack_item_rotation_x", 0.0, 0.0 ]
         }
       }
     },
