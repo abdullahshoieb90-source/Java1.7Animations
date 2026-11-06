@@ -1,4 +1,4 @@
-### v2.7.0
+### v2.5.4
 
 - Replaced the v2.5.3 spear-compatibility approximation with a source-derived port of Minecraft Java 1.21.11's `SpearAnimations` in both first and third person
 - Ported per-tier `UseParams` timing, normalized STAB phases (`0.05`, `0.20`, `0.40`), Java easing (`outBack`, `inOutExpo`, `inOutElastic`, and the other source curves), arm poses, pivot-based item transforms, forward movement, and kinetic-hit feedback

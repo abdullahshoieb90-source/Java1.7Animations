@@ -5,7 +5,7 @@
 
 This resource pack attempts to faithfully port over many player animations from Minecraft Java Edition v1.7 to Minecraft Bedrock Edition. Contributions are welcome in the form of pull requests! Please submit a detailed issue if you have a bug report.
 
-**Bedrock 1.21.130+:** v2.7.0 replaces the earlier spear-compatibility approximation with a source-derived port of Java 1.21.11's spear animations in both perspectives. It includes per-tier use timing, Java's attack phases and easing curves, pivot-based item transforms, hit feedback, and all seven spear types in every subpack configuration.
+**Bedrock 1.21.130+:** v2.5.4 replaces the earlier spear-compatibility approximation with a source-derived port of Java 1.21.11's spear animations in both perspectives. It includes per-tier use timing, Java's attack phases and easing curves, pivot-based item transforms, hit feedback, and all seven spear types in every subpack configuration.
 
 The spear regression suite executes the packed Molang against an independent Java-math reference, including first-person `PoseStack` positions. These are static/source-derived checks, not a substitute for an in-game visual comparison. Bedrock `rightitem` conversion was cross-checked against the [Fixed Vanilla integration in MADLAD3718/The-Crew-SMP](https://github.com/MADLAD3718/The-Crew-SMP).
 
@@ -24,7 +24,7 @@ Run the validator before opening a pull request — it catches the usual breakag
 - **Releases** (`.github/workflows/release.yml`) publish a GitHub release with the `.mcpack`, SHA256 checksums and the matching CHANGELOG section when a version tag matching `manifest.json` is pushed:
 
 ```bash
-git tag v2.7.0 && git push origin v2.7.0
+git tag v2.5.4 && git push origin v2.5.4
 ```
 
 The release job fails with a clear message if the tag does not match the manifest version (bump the manifest first).
