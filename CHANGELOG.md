@@ -1,3 +1,11 @@
+### v2.5.3
+
+- Fixed melee spears being invisible in first person on Minecraft Bedrock 1.21.130 and newer
+- Added spear hold, use, and attack animations, including the attachable variables required by the newer rendering pipeline
+- Enabled the spear animations in all 12 subpack configurations, including the console eat-animation variants
+- Prevented the generic arm-swing animation from conflicting with spear attacks
+- First-person compatibility adapted from [BrineFlashYT's upstream fix](https://github.com/ambiennt/Java1.7Animations/pull/18) and covered by regression tests
+
 ### v2.5.1
 
 - Added `No Armor Overlay + Console Edition Eat Animation` subpack

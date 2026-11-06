@@ -6,7 +6,7 @@ inside a `.mcpack`.
 ```bash
 python3 tools/pack_check.py           # validate the pack
 python3 tools/pack_check.py --verbose # also list vanilla ids that are referenced
-python3 -m unittest discover -s tools # self-tests for the validator and the builder
+python3 -m unittest discover -s tools # validator, builder, and spear-compatibility tests
 python3 tools/build_mcpack.py         # build artifacts/Java1.7Animations_v<version>.mcpack
 python3 tools/build_mcpack.py --split # one merged archive per subpack
 ```

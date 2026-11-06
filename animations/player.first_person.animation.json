@@ -1,4 +1,5 @@
 // This file was modified by ambient (ambiennt on discord). Do not use or redistribute this file or its contents without explicit permission from the author.
+// First-person spear compatibility adapted from BrineFlashYT's upstream fix (PR #18).
 {
   "format_version" : "1.10.0",
   "animations": {
@@ -25,6 +26,60 @@
         "rightarm" : {
           "position" : [ 13.15, "(v.short_arm_offset_right * 1.8) - 7.45", 10.5 ],
           "rotation" : [ 95.5, -40.0, 116.0 ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_hold": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightarm": {
+          "position": [ 13.15, "(v.short_arm_offset_right * 1.8) - 7.45", 10.5 ],
+          "rotation": [ 95.5, -40.0, 116.0 ]
+        },
+        "rightitem": {
+          "position": [
+            -1.5,
+            "q.get_default_bone_pivot('rightarm', 1) - q.get_default_bone_pivot('rightitem', 1) - 7.0 + 2.0",
+            "-q.get_default_bone_pivot('rightitem', 2) + 3.5"
+          ],
+          "rotation": [ 60.0, 47.5, 0.0 ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_use": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightarm": {
+          "position": [ 13.15, "(v.short_arm_offset_right * 1.8) - 7.45", 10.5 ],
+          "rotation": [ 95.5, -40.0, 116.0 ]
+        },
+        "rightitem": {
+          "position": [
+            "-1.5 + v.fp_melee_spear_use_item_position_x",
+            "q.get_default_bone_pivot('rightarm', 1) - q.get_default_bone_pivot('rightitem', 1) - 7.0 + 2.0 + v.fp_melee_spear_use_item_position_y",
+            "-q.get_default_bone_pivot('rightitem', 2) + 3.5 + v.fp_melee_spear_use_item_position_z"
+          ],
+          "rotation": [ 45.0, "55.0 + v.fp_melee_spear_use_item_rotation_y", "12.5 + v.fp_melee_spear_use_item_rotation_z" ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_attack": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightarm": {
+          "position": [ 13.15, "(v.short_arm_offset_right * 1.8) - 7.45", 10.5 ],
+          "rotation": [ 95.5, -40.0, 116.0 ]
+        },
+        "rightitem": {
+          "position": [
+            "-1.5 + v.fp_melee_spear_attack_item_position_x",
+            "q.get_default_bone_pivot('rightarm', 1) - q.get_default_bone_pivot('rightitem', 1) - 7.0 + 2.0 + v.fp_melee_spear_attack_item_position_y",
+            "-q.get_default_bone_pivot('rightitem', 2) + 3.5 + v.fp_melee_spear_attack_item_position_z"
+          ],
+          "rotation": [ 45.0, "55.0 + v.fp_melee_spear_attack_item_rotation_y", "-12.5 + v.fp_melee_spear_attack_item_rotation_z" ]
         }
       }
     },

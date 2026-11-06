@@ -5,6 +5,8 @@
 
 This resource pack attempts to faithfully port over many player animations from Minecraft Java Edition v1.7 to Minecraft Bedrock Edition. Contributions are welcome in the form of pull requests! Please submit a detailed issue if you have a bug report.
 
+**Bedrock 1.21.130+:** v2.5.3 restores first-person melee-spear rendering and includes hold, use, and attack animations in every subpack configuration.
+
 ### Working on the pack:
 The repository is the pack itself: the root folder is what gets zipped into a `.mcpack`, and `subpacks/` holds the optional variants listed in `manifest.json`. Two dependency-free scripts live in [`tools/`](tools/README.md):
 
@@ -20,7 +22,7 @@ Run the validator before opening a pull request — it catches the usual breakag
 - **Releases** (`.github/workflows/release.yml`) publish a GitHub release with the `.mcpack`, SHA256 checksums and the matching CHANGELOG section when a version tag matching `manifest.json` is pushed:
 
 ```bash
-git tag v2.5.2 && git push origin v2.5.2
+git tag v2.5.3 && git push origin v2.5.3
 ```
 
 The release job fails with a clear message if the tag does not match the manifest version (bump the manifest first).
