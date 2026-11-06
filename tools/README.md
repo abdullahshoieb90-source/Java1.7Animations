@@ -46,6 +46,12 @@ live in the root, an alias resolves if any layer declares it.
 Exit code `0` means clean, `1` means errors (or warnings with `--strict`).
 `--json` gives machine-readable output for CI.
 
+## Spear regression tests
+
+`test_spear_compat.py` checks that every subpack and controller layer wires the complete first-/third-person spear pipeline. `test_spear_java_port.py` executes the packed spear Molang with a small test evaluator and compares it with `spear_java_reference.py`, a dependency-free reference for Java 1.21.11's `SpearAnimations` equations.
+
+The numeric checks cover wooden and netherite use timings, attack phases and easing, hit feedback, third-person source angles/translations, neutral endpoints, and full first-person `PoseStack` translation/rotation results. They do not launch Minecraft, so Bedrock rendering and visual equivalence still require an on-device check.
+
 ## `build_mcpack.py`
 
 A Bedrock resource pack is a zip with `manifest.json` at the root, so archives

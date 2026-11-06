@@ -1,3 +1,14 @@
+### v2.7.0
+
+- Replaced the v2.5.3 spear-compatibility approximation with a source-derived port of Minecraft Java 1.21.11's `SpearAnimations` in both first and third person
+- Ported per-tier `UseParams` timing, normalized STAB phases (`0.05`, `0.20`, `0.40`), Java easing (`outBack`, `inOutExpo`, `inOutElastic`, and the other source curves), arm poses, pivot-based item transforms, forward movement, and kinetic-hit feedback
+- Added Java spear display geometry and first-/third-person attachable transforms for wooden, stone, copper, iron, golden, diamond, and netherite spears while preserving each tier's hit sound
+- Third-person attack and use transforms now compose in Java's `ItemInHandLayer` order; custom armor arms follow the same hold/use/attack poses
+- Enabled the complete pipeline in all 12 subpacks and removed the obsolete Bedrock attachable-variable approximation
+- Added an independent Java reference implementation and numeric Molang regression tests, including first-person `PoseStack` positions, attack/use timing, hit feedback, and neutral endpoints; the full suite now contains 35 tests
+- Cross-checked Bedrock `rightitem` conversion against the [Fixed Vanilla integration in MADLAD3718/The-Crew-SMP](https://github.com/MADLAD3718/The-Crew-SMP)
+- Static/source-derived verification only: visual equivalence still needs to be checked on a Minecraft Bedrock device
+
 ### v2.5.3
 
 - Fixed melee spears being invisible in first person on Minecraft Bedrock 1.21.130 and newer
