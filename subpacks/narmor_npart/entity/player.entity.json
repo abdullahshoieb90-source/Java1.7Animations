@@ -51,7 +51,12 @@
       "scripts": {
         "variables": {
           "variable.short_arm_offset_left": "public",
-          "variable.short_arm_offset_right": "public"
+          "variable.short_arm_offset_right": "public",
+          // The spear's attachable reads these off its owning player, so they must be public.
+          "variable.fp_melee_spear_use_attachable_rotation_z": "public",
+          "variable.tp_melee_spear_use_attachable_rotation_z": "public",
+          "variable.fp_melee_spear_attack_attachable_rotation_z": "public",
+          "variable.tp_melee_spear_attack_attachable_position_z": "public"
         },
         "scale": "0.9375",
         "initialize": [
@@ -64,6 +69,21 @@
           "v.hand_bob = 0.0;",
           "v.damage_nearby_mobs = 0.0;",
           "v.is_brandishing_spear = 0.0;",
+          // Spear (Minecraft 1.21.110+/1.26) state. These are recomputed in `pre_animation`;
+          // they start at their rest values so a spear never snaps on the first frame.
+          "v.ambient_spear_equipped = 0.0;",
+          "v.tp_melee_spear_base_arm_rotation_x = -30.0;",
+          "v.tp_melee_spear_use_arm_rotation_x = 0.0;",
+          "v.tp_melee_spear_use_arm_rotation_y = 0.0;",
+          "v.tp_melee_spear_use_arm_rotation_z = 0.0;",
+          "v.tp_melee_spear_use_item_rotation_x = 0.0;",
+          "v.tp_melee_spear_attack_arm_rotation_x = 0.0;",
+          "v.tp_melee_spear_attack_item_rotation_x = 0.0;",
+          "v.item_use_ticks = 0.0;",
+          "v.fp_melee_spear_use_attachable_rotation_z = 0.0;",
+          "v.fp_melee_spear_attack_attachable_rotation_z = 0.0;",
+          "v.tp_melee_spear_use_attachable_rotation_z = 0.0;",
+          "v.tp_melee_spear_attack_attachable_position_z = 0.0;",
           "v.is_holding_spyglass = 0.0;",
           "v.is_tooting_goat_horn = 0.0;",
           "v.is_using_brush = 0.0;",
@@ -120,6 +140,21 @@
 
           "t.dist = (q.is_local_player ? v.modified_distance_moved : q.modified_distance_moved); t.speed = (q.is_local_player ? v.modified_move_speed : q.modified_move_speed); v.tcos0 = (math.cos(t.dist * 38.1971863421) * t.speed / v.gliding_speed_value) * 57.2957795131;",
           
+          // Spear charge timing needs a monotonic tick counter while the spear is in use.
+          "v.item_use_ticks = q.is_using_item ? (v.item_use_ticks ?? 0.0) + q.delta_time * 20.0 : 0.0;",
+          // Spear (Minecraft 1.21.110+/1.26). Listed by id on purpose: `q.equipped_item_any_tag`
+          // does not exist on the older engines this pack still supports (min_engine 1.21.0), and an
+          // unknown query makes the whole script error out.
+          "v.ambient_spear_equipped = q.is_item_name_any('slot.weapon.mainhand', 'minecraft:wooden_spear', 'minecraft:stone_spear', 'minecraft:copper_spear', 'minecraft:iron_spear', 'minecraft:golden_spear', 'minecraft:diamond_spear', 'minecraft:netherite_spear') ? 1.0 : 0.0;",
+          // The charge-attack stage timings are hardcoded here instead of read from
+          // `q.kinetic_weapon_*` so the pack keeps loading on engines that predate the spear
+          // (those queries do not exist before 1.21.110 and would break the whole script).
+          "v.ambient_spear_equipped ? { t.melee_spear_use_finish_raise_tick = 12.0; t.melee_spear_use_finish_sway_tick = t.melee_spear_use_finish_raise_tick + 50.0; t.melee_spear_use_start_sway_tick = t.melee_spear_use_finish_sway_tick - 20.0; t.melee_spear_use_finish_lower_tick = t.melee_spear_use_finish_raise_tick + 135.0; t.melee_spear_use_start_lower_tick = t.melee_spear_use_finish_lower_tick - 40.0; t.melee_spear_use_finish_raise_back_tick = t.melee_spear_use_finish_raise_tick + 225.0; t.melee_spear_use_start_raise_back_tick = t.melee_spear_use_finish_raise_back_tick - 5.0; };",
+          "v.ambient_spear_equipped ? { t.melee_spear_use_raise_progress = math.clamp(math.inverse_lerp(0.0, t.melee_spear_use_finish_raise_tick, v.item_use_ticks), 0.0, 1.0); t.melee_spear_use_raise_progress_start = math.clamp(math.inverse_lerp(0.0, 0.5, t.melee_spear_use_raise_progress), 0.0, 1.0); t.melee_spear_use_raise_progress_middle = math.clamp(math.inverse_lerp(0.5, 0.8, t.melee_spear_use_raise_progress), 0.0, 1.0); t.melee_spear_use_raise_progress_end = math.clamp(math.inverse_lerp(0.8, 1.0, t.melee_spear_use_raise_progress), 0.0, 1.0); };",
+          "v.ambient_spear_equipped ? { t.melee_spear_use_sway_progress = math.clamp(math.inverse_lerp(t.melee_spear_use_start_sway_tick, t.melee_spear_use_finish_sway_tick, v.item_use_ticks), 0.0, 1.0); t.melee_spear_use_lower_progress = math.ease_in_out_elastic(0.0, 1.0, math.clamp(math.inverse_lerp(t.melee_spear_use_start_lower_tick, t.melee_spear_use_finish_lower_tick, v.item_use_ticks - 20.0), 0.0, 1.0)); t.melee_spear_use_raise_back_progress = math.clamp(math.inverse_lerp(t.melee_spear_use_start_raise_back_tick, t.melee_spear_use_finish_raise_back_tick, v.item_use_ticks), 0.0, 1.0); };",
+          "v.ambient_spear_equipped ? { t.melee_spear_use_sway_intensity = math.ease_out_circ(0.0, 2.0, t.melee_spear_use_sway_progress) + math.ease_in_circ(0.0, -2.0, t.melee_spear_use_raise_back_progress); t.melee_spear_use_sway_scale_slow = math.sin(v.item_use_ticks * 19.0) * t.melee_spear_use_sway_intensity; t.melee_spear_use_sway_scale_fast = math.sin(v.item_use_ticks * 30.0) * t.melee_spear_use_sway_intensity; };",
+          "v.ambient_spear_equipped ? { v.tp_melee_spear_use_arm_rotation_x = t.melee_spear_use_raise_progress_start * -40.0 + t.melee_spear_use_raise_progress_middle * 30.0 + t.melee_spear_use_raise_progress_end * -20.0 + t.melee_spear_use_lower_progress * 20.0 + t.melee_spear_use_raise_back_progress * 10.0 + t.melee_spear_use_sway_scale_slow * 0.6; v.tp_melee_spear_use_arm_rotation_y = t.melee_spear_use_sway_scale_fast * 1.0; v.tp_melee_spear_use_arm_rotation_z = t.melee_spear_use_sway_scale_slow * 0.5; };",
+          "v.ambient_spear_equipped ? { v.tp_melee_spear_use_item_rotation_x = t.melee_spear_use_raise_progress * 60.0 + t.melee_spear_use_raise_back_progress * -60.0; v.tp_melee_spear_use_attachable_rotation_z = t.melee_spear_use_raise_progress * 90.0 + t.melee_spear_use_sway_progress * -90.0; };",
           "v.attack_body_rot_y = math.sin(math.sqrt(v.attack_time) * 360) * 11.4591559026;",        
           "v.item_use_normalized = (q.main_hand_item_use_duration > 0.0) ? (q.main_hand_item_use_duration - q.frame_alpha + 1) / q.main_hand_item_max_duration : 0.0;",
           "v.map_angle = math.clamp(1 - v.player_x_rotation / 45.1, 0, 1);",
@@ -230,7 +265,18 @@
         "holding_brush": "animation.humanoid.holding_brush",
         "brushing": "animation.humanoid.brushing",
         "crawling": "animation.player.crawl",
-        "crawling.legs": "animation.player.crawl.legs"
+        "crawling.legs": "animation.player.crawl.legs",
+
+        // Spears (Minecraft 1.21.110+/1.26). The player entity replaces vanilla's, so these
+        // aliases have to be re-declared here or the spear never gets held properly.
+        "first_person_melee_spear_hold": "animation.player.first_person.melee_spear_hold",
+        "first_person_melee_spear_use": "animation.player.first_person.melee_spear_use",
+        "first_person_melee_spear_attack": "animation.player.first_person.melee_spear_attack",
+        "first_person_melee_spear_controller": "controller.animation.player.first_person_melee_spear",
+        "third_person_melee_spear_hold": "animation.humanoid.melee_spear_hold",
+        "third_person_melee_spear_use": "animation.humanoid.melee_spear_use",
+        "third_person_melee_spear_attack": "animation.player.melee_spear_attack",
+        "third_person_melee_spear_controller": "controller.animation.player.melee_spear"
       },
       "render_controllers": [
         { "controller.render.player.first_person_spectator": "v.is_first_person && q.is_spectator" },

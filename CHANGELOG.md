@@ -1,3 +1,14 @@
+### v2.5.3
+
+- **Fixed spears not rendering in first person** (Minecraft 1.21.110+ / 1.26 "Mounts of Mayhem")
+    - The pack replaces `entity/player.entity.json`, so the spear aliases vanilla added there were gone and the hand stayed empty while a spear was selected
+- **Fixed the third-person spear hold** — the arm was limp and the spear clipped through the body/elytra
+    - Re-added `animation.humanoid.melee_spear_hold` / `melee_spear_use` and `animation.player.melee_spear_attack`, which the pack's copies of `humanoid.animation.json` / `player.animation.json` were shadowing
+    - Re-added `controller.animation.player.melee_spear` and `controller.animation.player.first_person_melee_spear`
+    - The regular slash attack no longer plays while a spear is held, so the two attacks stop fighting each other
+- Spear detection lists the seven spear ids instead of using `q.equipped_item_any_tag`/`q.kinetic_weapon_*`, so the pack still loads on the older engines it supports (min engine 1.21.0)
+- `tools/pack_check.py` now knows the vanilla spear identifiers
+
 ### v2.5.1
 
 - Added `No Armor Overlay + Console Edition Eat Animation` subpack

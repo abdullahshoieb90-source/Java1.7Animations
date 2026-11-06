@@ -292,6 +292,25 @@
           "rotation": [ 155.0, 30.0, 40.0 ]
         }
       }
+    },
+    "animation.player.melee_spear_attack": {
+      "loop": true,
+      "bones": {
+        "body": {
+          "rotation": [ 0.0, "v.attack_body_rot_y", 0.0 ]
+        },
+        "rightarm": {
+          "rotation": [
+            "v.tp_melee_spear_base_arm_rotation_x + q.target_x_rotation - q.is_sneaking * 27.0 - this + v.tp_melee_spear_attack_arm_rotation_x",
+            "math.clamp(q.target_y_rotation, -60.0, 45.0) - this - v.attack_body_rot_y",
+            0.0
+          ]
+        },
+        "rightitem": {
+          "position": [ 0.0, -1.5, -1.5 ],
+          "rotation": [ "v.tp_melee_spear_attack_item_rotation_x", 0.0, 0.0 ]
+        }
+      }
     }
   }
 }

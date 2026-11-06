@@ -122,6 +122,39 @@
           "rotation" : [ -92.5, 135, 77.5 ]
         }
       }
+    },
+
+    // Spear support (Minecraft 1.21.110+/1.26). Shadowing vanilla's first-person file dropped
+    // these, so the spear had no pose at all in first person and never showed in the hand.
+    "animation.player.first_person.melee_spear_hold": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [ -1.5, 2.0, 3.5 ],
+          "rotation": [ 45.0, 55.0, -12.5 ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_use": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [ -1.5, 2.0, 3.5 ],
+          "rotation": [ 45.0, 55.0, -12.5 ]
+        }
+      }
+    },
+    "animation.player.first_person.melee_spear_attack": {
+      "loop": true,
+      "override_previous_animation": false,
+      "bones": {
+        "rightitem": {
+          "position": [ -1.5, 2.0, 3.5 ],
+          "rotation": [ 45.0, 55.0, -12.5 ]
+        }
+      }
     }
   }
 }

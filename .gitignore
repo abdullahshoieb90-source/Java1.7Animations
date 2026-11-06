@@ -3,3 +3,4 @@
 !tools/*.py
 artifacts/
 __pycache__/
+google_drive/

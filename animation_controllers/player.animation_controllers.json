@@ -77,6 +77,61 @@
         }
       }
     },
+    // Spear support (Minecraft 1.21.110+/1.26). Vanilla drives the spear poses through these two
+    // controllers; the pack replaces the player entity, so it has to declare them itself.
+    "controller.animation.player.first_person_melee_spear": {
+      "initial_state": "hold",
+      "states": {
+        "hold": {
+          "animations": [ "first_person_melee_spear_hold" ],
+          "transitions": [
+            { "use": "v.item_use_normalized > 0.0" },
+            { "attack": "v.attack_time > 0.0" }
+          ]
+        },
+        "use": {
+          "animations": [ "first_person_melee_spear_use" ],
+          "transitions": [
+            { "hold": "v.item_use_normalized == 0.0" }
+          ]
+        },
+        "attack": {
+          "animations": [ "first_person_melee_spear_attack" ],
+          "transitions": [
+            { "hold": "v.attack_time == 0.0" },
+            // A spear can be used while its attack animation is still playing.
+            { "use": "v.item_use_normalized > 0.0" }
+          ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        }
+      }
+    },
+    "controller.animation.player.melee_spear": {
+      "initial_state": "hold",
+      "states": {
+        "hold": {
+          "animations": [ "third_person_melee_spear_hold" ],
+          "transitions": [
+            { "use": "v.item_use_normalized > 0.0" },
+            { "attack": "v.attack_time > 0.0" }
+          ]
+        },
+        "use": {
+          "animations": [ "third_person_melee_spear_use" ],
+          "transitions": [
+            { "hold": "v.item_use_normalized == 0.0" }
+          ]
+        },
+        "attack": {
+          "animations": [ "third_person_melee_spear_attack" ],
+          "transitions": [
+            { "hold": "v.attack_time == 0.0" },
+            { "use": "v.item_use_normalized > 0.0" }
+          ]
+        }
+      }
+    },
     "controller.animation.player.root": {
       "initial_state": "first_person",
       "states": {
@@ -84,8 +139,9 @@
           "animations": [
             "first_person_base_pose",
             "first_person_swap_item",
-            { "first_person_attack_controller": "(v.attack_time > 0.0) && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map')" },
-            { "first_person_empty_hand": "!v.is_holding_right" },
+            { "first_person_attack_controller": "(v.attack_time > 0.0) && !q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map') && !v.ambient_spear_equipped" },
+            { "first_person_empty_hand": "!v.is_holding_right && !v.ambient_spear_equipped" },
+            { "first_person_melee_spear_controller": "v.ambient_spear_equipped" },
             { "first_person_map_controller": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:filled_map') || q.is_item_name_any('slot.weapon.offhand', 'minecraft:filled_map')" }
           ],
           "transitions": [
@@ -117,7 +173,7 @@
             { "sneaking": "q.is_sneaking && !q.is_sleeping && !q.is_swimming" },
             { "sleeping": "q.is_sleeping && q.is_alive" },
             "swim_crawl_controller",
-            { "attack.rotations": "v.attack_time > 0.0" },
+            { "attack.rotations": "v.attack_time > 0.0 && !v.ambient_spear_equipped" },
             { "shield_block_main_hand": "q.blocking && !q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') && q.is_item_name_any('slot.weapon.mainhand', 'minecraft:shield')" },
             { "shield_block_off_hand": "q.blocking && q.is_item_name_any('slot.weapon.offhand', 'minecraft:shield') && (v.item_use_normalized <= 0.0) && !q.item_is_charged" },
             { "crossbow_controller": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:crossbow')" },
@@ -128,7 +184,8 @@
             { "menu_pose": "v.is_in_menu" },
             { "tooting_goat_horn": "v.is_tooting_goat_horn" },
             { "holding_brush": "q.is_item_name_any('slot.weapon.mainhand', 'minecraft:brush')" },
-            { "brushing": "v.is_using_brush" }
+            { "brushing": "v.is_using_brush" },
+            { "third_person_melee_spear_controller": "v.ambient_spear_equipped" }
           ],
           "transitions": [
             { "first_person": "v.is_first_person" },
